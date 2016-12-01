@@ -1,0 +1,45 @@
+/* Our Custom CSS */
+body{
+	/*background:url(../images/logo.png) no-repeat center top; */
+	background-color: #e8e8ea;
+	padding: 0px;
+	margin: 0px;
+}
+#nav-id.navbar-inverse{
+	background-color: #2b98f0;
+	/*#893ba9;*/
+	border-radius: 0px;
+	padding: 0px 10px;
+	margin: 0px;
+	border: 0px;
+}
+
+/*#bimg{
+	width: 50px;
+	height: 50px;
+	margin-top: 0px;
+}*/
+
+.main-container button{
+	cursor: pointer;
+}
+
+#nav-id.navbar-inverse .navbar-brand{
+	color: #ffffff;
+	font-size: 30px;
+	padding: 
+}
+
+.main-container.container{
+	width: 80%;
+	margin: 10px auto;
+	padding: 0px;
+	border: 0px;
+}
+
+.row #dimg{
+	width: 150px;
+	height: 150px;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
