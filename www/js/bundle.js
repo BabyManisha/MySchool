@@ -11925,9 +11925,49 @@ setTimeout(function () {
 module.exports = Vue;
 }).call(this,require('_process'))
 },{"_process":1}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+
+var RandomWord = require('./random-word.vue');
+var SM = require('./sm.vue');
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: ''
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.activeApp = op;
+    }
+  },
+  components: {
+    'random-word': RandomWord,
+    'sm': SM
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <!-- <div id=\"homehr\"></div> -->\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('parents')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/parents.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('faculty')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/teachers.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('admin')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/admin.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n  \t</div>\n  \t\n  </div>\n\n   <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n\n</div>\n\n<div class=\"main-container container\" v-if=\"activeApp != ''\">\n  <random-word v-if=\"activeApp == 'parents'\"></random-word>\n  <random-word v-if=\"activeApp == 'faculty'\"></random-word>\n  <sm v-if=\"activeApp == 'admin'\"></sm>\n  <sm v-if=\"activeApp == 'aboutus'\"></sm>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-4fc9124a", module.exports)
+  } else {
+    hotAPI.update("_v-4fc9124a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./random-word.vue":8,"./sm.vue":9,"vue":4,"vue-hot-reload-api":2}],6:[function(require,module,exports){
 var Vue = require('vue')
 var VueResource = require('vue-resource');
 var MainVue = require('./main.vue')
+var HomeVue = require('./Home.vue')
 
 
 Vue.use(VueResource);
@@ -11939,10 +11979,11 @@ var vm = new Vue({
     }
   },
   components: {
-    'main-vue': MainVue
+    'main-vue': MainVue,
+    'home-vue': HomeVue
   }
 });
-},{"./main.vue":6,"vue":4,"vue-resource":3}],6:[function(require,module,exports){
+},{"./Home.vue":5,"./main.vue":7,"vue":4,"vue-resource":3}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11981,7 +12022,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-1e89b2d6", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./random-word.vue":7,"./sm.vue":8,"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+},{"./random-word.vue":8,"./sm.vue":9,"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12041,7 +12082,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-608b5728", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12083,4 +12124,4 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-c5f25094", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}]},{},[5]);
+},{"vue":4,"vue-hot-reload-api":2}]},{},[6]);
