@@ -66,6 +66,7 @@ export default {
     data () {
       	return {
     		activeApp: '',
+        urlbase: 'https://deals.shivaprasanth.info'
     	}
   	},
     methods: {

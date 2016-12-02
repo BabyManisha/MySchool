@@ -32,7 +32,8 @@
 export default {
   data () {
     return {
-      activeApp: this.$parent.activeApp
+      activeApp: this.$parent.activeApp,
+      urlbase: this.$parent.urlbase
     }
   },
   methods: {

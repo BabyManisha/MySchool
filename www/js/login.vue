@@ -43,7 +43,7 @@ export default {
       username: '',
       password: '',
       userRole:'',
-      urlbase: 'https://deals.shivaprasanth.info'
+      urlbase: this.$parent.urlbase
     }
   },
   methods: {

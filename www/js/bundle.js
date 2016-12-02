@@ -12043,7 +12043,8 @@ var Testing = require('./main.vue');
 exports.default = {
   data: function data() {
     return {
-      activeApp: ''
+      activeApp: '',
+      urlbase: 'https://deals.shivaprasanth.info'
     };
   },
 
@@ -12086,7 +12087,7 @@ exports.default = {
       username: '',
       password: '',
       userRole: '',
-      urlbase: 'https://deals.shivaprasanth.info'
+      urlbase: this.$parent.urlbase
     };
   },
 
@@ -12205,7 +12206,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   data: function data() {
     return {
-      activeApp: this.$parent.activeApp
+      activeApp: this.$parent.activeApp,
+      urlbase: this.$parent.urlbase
     };
   },
 
