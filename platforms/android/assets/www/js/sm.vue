@@ -50,16 +50,14 @@ export default {
   methods: {
   	getData: function(){
   		var self = this;
-        $.getJSON("https://sheetsu.com/apis/v1.0/f30264ebda07", {} )
-          .done(function( json ) {
-            console.log( "JSON Data: " + json );
-            self.smData = json;
-            console.log(self.smData);
-          })
-          .fail(function( jqxhr, textStatus, error ) {
-            var err = textStatus + ", " + error;
-            console.log( "Request Failed: " + err );
-        });
+      self.$http.get('https://sheetsu.com/apis/v1.0/f30264ebda07')
+      .then(function(response) {
+          console.log(response);
+          self.smData = response.data;
+          console.log(self.smData);
+      }, function(error) {
+          console.log(error);
+      });
   	}
   }
 }

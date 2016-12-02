@@ -9,8 +9,10 @@
     </div>
   </nav>
 
-  <div class="app">
+  <div id="login-box" class="app">
+    <h3>Sign in to Your Account</h3>
     <div class="main-container container">
+      <form v-on:enter="checkLogin()">
         <div class="form-group">
           <input type="text" id="username" v-model="username" 
             placeholder="Username" class="form-control">
@@ -19,17 +21,18 @@
           <input type="password" id="username" v-model="password" 
             class="form-control" placeholder="Password">
         </div>
-        <button type="button" class="btn btn-waring" @click="checkLogin()">Login</button>
+        <button type="button" class="btn btn-waring btn-lg btn-block" @click="checkLogin()">Login</button>
+      </form>
     </div>
   </div>
 
-  <nav id="nav-id1" class="navbar navbar-inverse">
+  <!-- <nav id="nav-id1" class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
           <a class="navbar-brand" href="#">All Rights 2016 @S4-Team</a>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </div>
 </template>
 
@@ -40,25 +43,47 @@ export default {
       username: '',
       password: '',
       userRole:'',
-      urlbase: 'http://localhost:8000'
+      urlbase: 'https://deals.shivaprasanth.info'
     }
   },
   methods: {
     switchApp: function(op){
       this.$parent.switchApp(op);
     },
+    checkFields: function(){
+      var self = this;
+      if(self.username && self.password){
+        return true;
+      }else{
+        return false;
+      }
+    },
     checkLogin: function() {
         var self = this;
-        $.get(urlbase+'/login', {} )
-          .done(function( data ) {
-            console.log("Login Successfully");
-            console.log( "JSON Data: " + data );
-            self.userRole = data.userRole;
-          })
-          .fail(function( jqxhr, textStatus, error ) {
-            var err = textStatus + ", " + error;
-            console.log( "Request Failed: " + err );
-        });
+        if(self.checkFields){
+          self.$http.post(self.urlbase+'/login', 
+            { 'username': self.username, 
+              'password': self.password, })
+          .then(function(response) {
+              console.log(response);
+              if(response.success){
+                self.userRole = data.userRole;
+                console.log(self.userRole);
+                self.switchApp('parents');
+              }else{
+                console.log("Login Failed");
+                // alert("Incorrect Username and Password");
+                self.switchApp('parents');
+              }
+          }, function(error) {
+              console.log(error);
+              console.log("no data found!!");
+              // alert("Incorrect Username and Password");
+              self.switchApp('parents');
+          });
+        }else{
+         // alert("Please Provide Valid Username and Password");
+        }
     }
   }
 }

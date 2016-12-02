@@ -11,24 +11,23 @@
 
   <div class="app">
     <div class="main-container container">
-        <random-word></random-word>
-        <sm-vue></sm-vue>
+        <img class="contactimg"src="images/contactus.jpg" alt="aboutus">
+        <h4> Mail us @ babymaneesha@gmail.com </h4>
+        <h4> Call us @ 7306826086 </h4>
     </div>
   </div>
 
-  <!-- <nav id="nav-id1" class="navbar navbar-inverse">
+  <nav id="nav-id1" class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
           <a class="navbar-brand" href="#">All Rights 2016 @S4-Team</a>
       </div>
     </div>
-  </nav> -->
+  </nav>
 </div>
 </template>
 
 <script>
-var RandomWord = require('./random-word.vue')
-var SM = require('./sm.vue')
 export default {
   data () {
     return {
@@ -38,10 +37,6 @@ export default {
     switchApp: function(op){
       this.$parent.switchApp(op);
     }
-  },
-  components: {
-    'random-word': RandomWord,
-    'sm-vue': SM,
   }
 }
 </script>

@@ -4,7 +4,6 @@
     <div class="container-fluid">
       <a class="fa fa-arrow-circle-left fa-2x" @click="switchApp('')"></a>
       <div class="navbar-header">
-           Go Back</button> 
           <a class="navbar-brand" href="#">Glim</a>
       </div>
     </div>
@@ -17,13 +16,13 @@
     </div>
   </div>
 
-  <nav id="nav-id1" class="navbar navbar-inverse">
+  <!-- <nav id="nav-id1" class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
           <a class="navbar-brand" href="#">All Rights 2016 @S4-Team</a>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </div>
 </template>
 

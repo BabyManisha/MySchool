@@ -11,19 +11,21 @@
 
   <div class="app">
     <div class="main-container container">
-        About Us !!
-        <random-word></random-word>
-        <sm-vue></sm-vue>
+        <img class="aboutimgs" src="images/aboutus1.jpg" alt="aboutus">
+        <img class="aboutimgs"src="images/aboutus2.jpg" alt="aboutus">
+
+        <!-- <random-word></random-word>
+        <sm-vue></sm-vue> -->
     </div>
   </div>
 
-  <nav id="nav-id1" class="navbar navbar-inverse">
+  <!-- <nav id="nav-id1" class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
           <a class="navbar-brand" href="#">All Rights 2016 @S4-Team</a>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </div>
 </template>
 

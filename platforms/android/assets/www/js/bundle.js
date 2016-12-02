@@ -11932,11 +11932,114 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
+var RandomWord = require('./random-word.vue');
+var SM = require('./sm.vue');
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    }
+  },
+  components: {
+    'random-word': RandomWord,
+    'sm-vue': SM
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <img class=\"aboutimgs\" src=\"images/aboutus1.jpg\" alt=\"aboutus\">\n        <img class=\"aboutimgs\" src=\"images/aboutus2.jpg\" alt=\"aboutus\">\n\n        <!-- <random-word></random-word>\n        <sm-vue></sm-vue> -->\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-3b62a282", module.exports)
+  } else {
+    hotAPI.update("_v-3b62a282", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./random-word.vue":13,"./sm.vue":14,"vue":4,"vue-hot-reload-api":2}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+
+var SM = require('./sm.vue');
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    }
+  },
+  components: {
+    'sm-vue': SM
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Admin !!\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-398ddc23", module.exports)
+  } else {
+    hotAPI.update("_v-398ddc23", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./sm.vue":14,"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <img class=\"contactimg\" src=\"images/contactus.jpg\" alt=\"aboutus\">\n        <h4> Mail us @ babymaneesha@gmail.com </h4>\n        <h4> Call us @ 7306826086 </h4>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-bfd413dc", module.exports)
+  } else {
+    hotAPI.update("_v-bfd413dc", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+
 var Login = require('./login.vue');
 var Parents = require('./parents.vue');
 var Teachers = require('./random-word.vue');
 var Admin = require('./admin.vue');
 var Aboutus = require('./aboutus.vue');
+var Contactus = require('./contactus.vue');
+var Testing = require('./main.vue');
 exports.default = {
   data: function data() {
     return {
@@ -11954,94 +12057,24 @@ exports.default = {
     'parents-vue': Parents,
     'teachers-vue': Teachers,
     'admin-vue': Admin,
-    'aboutus-vue': Aboutus
+    'aboutus-vue': Aboutus,
+    'contactus-vue': Contactus,
+    'testing-vue': Testing
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <!-- <div id=\"homehr\"></div> -->\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/parents.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/teachers.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/admin.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n  \t</div>\n  </div>\n\n   <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n</div>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <!-- <div id=\"homehr\"></div> -->\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      \n  \t</div>\n  </div>\n\n   <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-4fc9124a", module.exports)
+    hotAPI.createRecord("_v-577dda8a", module.exports)
   } else {
-    hotAPI.update("_v-4fc9124a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-577dda8a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./aboutus.vue":6,"./admin.vue":7,"./login.vue":8,"./parents.vue":11,"./random-word.vue":12,"vue":4,"vue-hot-reload-api":2}],6:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-
-var RandomWord = require('./random-word.vue');
-var SM = require('./sm.vue');
-exports.default = {
-  data: function data() {
-    return {};
-  },
-
-  methods: {
-    switchApp: function switchApp(op) {
-      this.$parent.switchApp(op);
-    }
-  },
-  components: {
-    'random-word': RandomWord,
-    'sm-vue': SM
-  }
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        About Us !!\n        <random-word></random-word>\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-3b62a282", module.exports)
-  } else {
-    hotAPI.update("_v-3b62a282", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"./random-word.vue":12,"./sm.vue":13,"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-
-var SM = require('./sm.vue');
-exports.default = {
-  data: function data() {
-    return {};
-  },
-
-  methods: {
-    switchApp: function switchApp(op) {
-      this.$parent.switchApp(op);
-    }
-  },
-  components: {
-    'sm-vue': SM
-  }
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n           Go Back \n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Admin !!\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-398ddc23", module.exports)
-  } else {
-    hotAPI.update("_v-398ddc23", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"./sm.vue":13,"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
+},{"./aboutus.vue":5,"./admin.vue":6,"./contactus.vue":7,"./login.vue":9,"./main.vue":11,"./parents.vue":12,"./random-word.vue":13,"vue":4,"vue-hot-reload-api":2}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12053,7 +12086,7 @@ exports.default = {
       username: '',
       password: '',
       userRole: '',
-      urlbase: 'http://localhost:8000'
+      urlbase: 'https://deals.shivaprasanth.info'
     };
   },
 
@@ -12061,21 +12094,43 @@ exports.default = {
     switchApp: function switchApp(op) {
       this.$parent.switchApp(op);
     },
+    checkFields: function checkFields() {
+      var self = this;
+      if (self.username && self.password) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     checkLogin: function checkLogin() {
       var self = this;
-      $.get(urlbase + '/login', {}).done(function (data) {
-        console.log("Login Successfully");
-        console.log("JSON Data: " + data);
-        self.userRole = data.userRole;
-      }).fail(function (jqxhr, textStatus, error) {
-        var err = textStatus + ", " + error;
-        console.log("Request Failed: " + err);
-      });
+      if (self.checkFields) {
+        self.$http.post(self.urlbase + '/login', { 'username': self.username,
+          'password': self.password }).then(function (response) {
+          console.log(response);
+          if (response.success) {
+            self.userRole = data.userRole;
+            console.log(self.userRole);
+            self.switchApp('parents');
+          } else {
+            console.log("Login Failed");
+            // alert("Incorrect Username and Password");
+            self.switchApp('parents');
+          }
+        }, function (error) {
+          console.log(error);
+          console.log("no data found!!");
+          // alert("Incorrect Username and Password");
+          self.switchApp('parents');
+        });
+      } else {
+        // alert("Please Provide Valid Username and Password");
+      }
     }
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <div class=\"form-group\">\n          <input type=\"text\" id=\"username\" v-model=\"username\" placeholder=\"Username\" class=\"form-control\">\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" id=\"username\" v-model=\"password\" class=\"form-control\" placeholder=\"Password\">\n        </div>\n        <button type=\"button\" class=\"btn btn-waring\" @click=\"checkLogin()\">Login</button>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div id=\"login-box\" class=\"app\">\n    <h3>Sign in to Your Account</h3>\n    <div class=\"main-container container\">\n      <form v-on:enter=\"checkLogin()\">\n        <div class=\"form-group\">\n          <input type=\"text\" id=\"username\" v-model=\"username\" placeholder=\"Username\" class=\"form-control\">\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" id=\"username\" v-model=\"password\" class=\"form-control\" placeholder=\"Password\">\n        </div>\n        <button type=\"button\" class=\"btn btn-waring btn-lg btn-block\" @click=\"checkLogin()\">Login</button>\n      </form>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12086,11 +12141,10 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-5c73a986", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],9:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],10:[function(require,module,exports){
 var Vue = require('vue')
 var VueResource = require('vue-resource');
-var MainVue = require('./main.vue')
-var HomeVue = require('./Home.vue')
+var HomeVue = require('./home.vue')
 
 
 Vue.use(VueResource);
@@ -12102,11 +12156,10 @@ var vm = new Vue({
     }
   },
   components: {
-    'main-vue': MainVue,
     'home-vue': HomeVue
   }
 });
-},{"./Home.vue":5,"./main.vue":10,"vue":4,"vue-resource":3}],10:[function(require,module,exports){
+},{"./home.vue":8,"vue":4,"vue-resource":3}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12115,44 +12168,6 @@ Object.defineProperty(exports, "__esModule", {
 
 
 var RandomWord = require('./random-word.vue');
-var SM = require('./sm.vue');
-exports.default = {
-  data: function data() {
-    return {
-      activeApp: ''
-    };
-  },
-
-  methods: {
-    switchApp: function switchApp(op) {
-      this.activeApp = op;
-    }
-  },
-  components: {
-    'random-word': RandomWord,
-    'sm': SM
-  }
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\" v-if=\"activeApp == ''\">\n    <button type=\"button\" class=\"btn btn-warning btn-lg btn-block\" @click=\"switchApp('parents')\">Parents / Students</button>\n    <button type=\"button\" class=\"btn btn-warning btn-lg btn-block\" @click=\"switchApp('faculty')\">Faculty</button>\n    <button type=\"button\" class=\"btn btn-warning btn-lg btn-block\" @click=\"switchApp('admin')\">Admin</button>\n\t</div>\n\t<div class=\"main-container container\" v-if=\"activeApp != ''\">\n    <random-word v-if=\"activeApp == 'parents'\"></random-word>\n    <sm v-if=\"activeApp == 'admin'\"></sm>\n\t</div>\n</div>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-1e89b2d6", module.exports)
-  } else {
-    hotAPI.update("_v-1e89b2d6", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"./random-word.vue":12,"./sm.vue":13,"vue":4,"vue-hot-reload-api":2}],11:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-
 var SM = require('./sm.vue');
 exports.default = {
   data: function data() {
@@ -12165,11 +12180,66 @@ exports.default = {
     }
   },
   components: {
+    'random-word': RandomWord,
     'sm-vue': SM
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left\" @click=\"switchApp('')\"></a> \n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Parents !!\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <random-word></random-word>\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-1e89b2d6", module.exports)
+  } else {
+    hotAPI.update("_v-1e89b2d6", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./random-word.vue":13,"./sm.vue":14,"vue":4,"vue-hot-reload-api":2}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: this.$parent.activeApp
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    },
+    logout: function logout() {
+      var self = this;
+      self.$http.post(self.urlbase + '/logout', {}).then(function (response) {
+        console.log(response);
+        self.closeNav();
+        self.switchApp('');
+      }, function (error) {
+        console.log(error);
+        console.log("no data found!!");
+        self.closeNav();
+        self.switchApp('');
+      });
+    },
+    openNav: function openNav() {
+      document.getElementById("mySidenav").style.width = "150px";
+      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    },
+    closeNav: function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
+      document.body.style.backgroundColor = "white";
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div v-if=\"activeApp != ''\">\n  <div id=\"mySidenav\" class=\"sidenav\">\n    <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Common</a>\n    <a href=\"#\">Hub</a>\n    <a href=\"#\">Posts</a>\n    <a><span @click=\"logout()\">Logout</span></a>\n  </div>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Parents !!\n    </div>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12180,7 +12250,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-b1e80c46", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./sm.vue":13,"vue":4,"vue-hot-reload-api":2}],12:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12198,30 +12268,11 @@ exports.default = {
     getRandomWord: function getRandomWord() {
       var self = this;
       self.randomWord = '...';
-
-      $.getJSON('http://api.wordnik.com:80/v4/words.json/randomWord?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5', {}).done(function (json) {
-        self.randomWord = json.word;
-        console.log("JSON Data: " + json);
-      }).fail(function (jqxhr, textStatus, error) {
-        var err = textStatus + ", " + error;
-        console.log("Request Failed: " + err);
+      self.$http.get('http://api.wordnik.com:80/v4/words.json/randomWord?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5').then(function (response) {
+        self.randomWord = response.data.word;
+      }, function (error) {
+        console.log(error);
       });
-
-      // self.$http.get('https://script.googleusercontent.com/macros/echo?user_content_key=pux9Wen6h7MQZVWZDYlDb-QMDtZEUmoiBqwlqN3vD2RW-S5jh_1M5SsLT8X8kKxYoEhvzHCgG03boobi-0hM63Rb5CWAnGShOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1ZsYSbt7G4nMhEEDL32U4DxjO7V7yvmJPXJTBuCiTGh3rUPjpYM_V0PJJG7TIaKp4Z0U-PmE6DZDs2T9b3Lxs3VObM1r8CkCvMjivNe3nq5pmdfpR_nUbUhtg7XNZ-x_cKiW3k6MDkf31SIMZH6H4k&lib=MbpKbbfePtAVndrs259dhPT7ROjQYJ8yx')
-      // .then(function(response) {
-      //   self.dealsData = response.data['Sheet1'];
-      // }, function(error) {
-      //   alert(error);
-      // });
-
-      // self.$http.get("https://sheetsu.com/apis/v1.0/f30264ebda07")
-      // .then(function(response){
-      //     console.log(response);
-      //     self.dealsData = response.data;
-      //     console.log(self.dealsData);
-      // }, function(error){
-      //     alert("Some Error occured in Api", error);
-      // });
     }
   }
 };
@@ -12237,32 +12288,31 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-608b5728", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
-"use strict";
+},{"vue":4,"vue-hot-reload-api":2}],14:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = {
-  data: function data() {
-    return {
-      smData: {}
-    };
-  },
+    data: function data() {
+        return {
+            smData: {}
+        };
+    },
 
-  methods: {
-    getData: function getData() {
-      var self = this;
-      $.getJSON("https://sheetsu.com/apis/v1.0/f30264ebda07", {}).done(function (json) {
-        console.log("JSON Data: " + json);
-        self.smData = json;
-        console.log(self.smData);
-      }).fail(function (jqxhr, textStatus, error) {
-        var err = textStatus + ", " + error;
-        console.log("Request Failed: " + err);
-      });
+    methods: {
+        getData: function getData() {
+            var self = this;
+            self.$http.get('https://sheetsu.com/apis/v1.0/f30264ebda07').then(function (response) {
+                console.log(response);
+                self.smData = response.data;
+                console.log(self.smData);
+            }, function (error) {
+                console.log(error);
+            });
+        }
     }
-  }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div>\n  <h1>Hello SivaMani!!</h1>\n  <button type=\"button\" class=\"btn btn-info btn-lg btn-block\" @click=\"getData\">Click to get Sample Data</button>\n  <div class=\"row\">\n    <div class=\"col-sm-6 col-md-4\" v-for=\"d in smData\">\n      <div class=\"thumbnail\">\n        <img id=\"dimg\" v-bind:src=\"'images/'+d.imgs\" alt=\"...\">\n        <div class=\"caption\">\n          <h3>{{d.name}}</h3>\n          <p>{{d.category}}</p>\n          <p>{{d.description}}</p>\n          <button type=\"button\" class=\"btn btn-default\" @click=\"getData()\">Details</button>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <nav aria-label=\"Page navigation\">\n    <ul class=\"pagination\">\n      <li>\n        <a href=\"#\" aria-label=\"Previous\">\n          <span aria-hidden=\"true\">«</span>\n        </a>\n      </li>\n      <li class=\"active\"><a href=\"#\">1</a></li>\n      <li><a href=\"#\">2</a></li>\n      <li><a href=\"#\">3</a></li>\n      <li><a href=\"#\">4</a></li>\n      <li><a href=\"#\">5</a></li>\n      <li>\n        <a href=\"#\" aria-label=\"Next\">\n          <span aria-hidden=\"true\">»</span>\n        </a>\n      </li>\n    </ul>\n  </nav>\n\n</div>\n"
@@ -12276,4 +12326,4 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-c5f25094", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}]},{},[9]);
+},{"vue":4,"vue-hot-reload-api":2}]},{},[10]);
