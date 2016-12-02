@@ -1,13 +1,10 @@
 <template>
   <div>
-    <button type="button" class="btn btn-primary" @click="switchApp('')">
-      <span class="fa fa-arrow-circle-left" aria-hidden="true"> Go Back</span>
-    </button>
     <h1>Hello SivaMani</h1>
     <h1>Random Word</h1> 
     <button id="btn-get-random-word" class="btn btn-info btn-lg btn-block" 
-      @click="getRandomWord">Get Random Word</button>
-    <p>{{randomWord}}</p>
+      @click="getRandomWord()">Get Random Word</button>
+    <h2>{{randomWord}}</h2>
   </div>
 </template>
 
@@ -20,9 +17,6 @@ export default {
     }
   },
   methods: {
-    switchApp: function(op){
-      this.$parent.switchApp(op);
-    },
     getRandomWord: function() {
         var self = this;
         self.randomWord = '...';

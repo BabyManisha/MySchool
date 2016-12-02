@@ -1,8 +1,5 @@
 <template>
   <div>
-    <button type="button" class="btn btn-primary" @click="switchApp('')">
-      <span class="fa fa-arrow-circle-left" aria-hidden="true"> Go Back</span>
-    </button>
     <h1>Hello SivaMani!!</h1>
     <button type="button" class="btn btn-info btn-lg btn-block" 
       @click="getData">Click to get Sample Data</button>
@@ -14,7 +11,7 @@
             <h3>{{d.name}}</h3>
             <p>{{d.category}}</p>
             <p>{{d.description}}</p>
-            <button type="button" class="btn btn-default" @click="getData">Details</button>
+            <button type="button" class="btn btn-default" @click="getData()">Details</button>
           </div>
         </div>
       </div>
@@ -51,9 +48,6 @@ export default {
     }
   },
   methods: {
-    switchApp: function(op){
-      this.$parent.switchApp(op);
-    },
   	getData: function(){
   		var self = this;
         $.getJSON("https://sheetsu.com/apis/v1.0/f30264ebda07", {} )

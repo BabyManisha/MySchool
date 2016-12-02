@@ -38,7 +38,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
+        // listeningElement.setAttribute('style', 'background:url(../images/logo.png) no-repeat center;');
         console.log('Received Event: ' + id);
     }
 };

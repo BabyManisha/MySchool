@@ -1,45 +1,99 @@
 /* Our Custom CSS */
 body{
 	/*background:url(../images/logo.png) no-repeat center top; */
-	background-color: #e8e8ea;
+	/*#545454;*/
 	padding: 0px;
 	margin: 0px;
 }
-#nav-id.navbar-inverse{
-	background-color: #2b98f0;
-	/*#893ba9;*/
-	border-radius: 0px;
-	padding: 0px 10px;
-	margin: 0px;
-	border: 0px;
+
+#homeapp{
+	/*background-color: #626465;*/
 }
 
-/*#bimg{
-	width: 50px;
-	height: 50px;
-	margin-top: 0px;
-}*/
+#nav-id.navbar-inverse{
+	/*background-color: #0092ff;*/
+	/*background-color: #F0AD4E;*/
+	background-color: #ff6b35;
+	border-radius: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	box-shadow: 1px 2px 1px #888888;
+}
+
+#nav-id .navbar-header{
+	width: 35%;
+	margin: 0 30%;
+}
+
+#nav-id.navbar-inverse .navbar-header a.navbar-brand{
+	color: #ffffff;
+	font-size: 40px;
+}
+
+#nav-id .container-fluid{
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.container-fluid a.fa.fa-arrow-circle-left{
+	background-color: #ffffff;
+	color: #ff6b35;
+	float: left;
+	margin: 0px;
+	padding: 14px;
+	text-decoration: none;
+}
+
+#nav-id1.navbar-inverse{
+	/*background-color: #545454;*/
+	background-color: #ff6b35;
+	opacity: 0.8;
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+	margin: 0;
+}
+
+#nav-id1 .navbar-brand{
+	color: #ffffff;
+	size: 10px;
+}
 
 .main-container button{
 	cursor: pointer;
+	margin: 10px 6px;
+	background-color: #ff6b35;
+	box-shadow: 10px 10px 5px #888888;
 }
 
-#nav-id.navbar-inverse .navbar-brand{
-	color: #ffffff;
-	font-size: 30px;
-	padding: 
+.main-containter .form-group{
+	margin-top: 20px;
+}
+
+.form-group .form-control{
+	height: 40px;
+	font-size: 15px;
+	border: 1px solid #ff6b35;
+}
+
+.main-container img{
+	width: 100px;
+	height: 100px;
+	margin: 6px 0px;
+	background-color: #ffffff;
 }
 
 .main-container.container{
 	width: 80%;
-	margin: 10px auto;
+	margin: 20px auto;
 	padding: 0px;
 	border: 0px;
 }
 
 .row #dimg{
-	width: 150px;
-	height: 150px;
-	border: 1px solid gray;
-	border-radius: 4px;
-}
+		width: 150px;
+		height: 150px;
+		border: 1px solid gray;
+		border-radius: 4px;
+	}
