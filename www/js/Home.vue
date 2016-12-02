@@ -1,6 +1,6 @@
 <template>
 <div id="homeapp" v-if="activeApp == ''">
-  <nav id="nav-id" class="navbar navbar-inverse">
+  <nav id="nav-id" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <a id="nobars" class="fa fa-bars fa-2x"></a>
       <div class="navbar-header">
@@ -8,8 +8,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- <div id="homehr"></div> -->
 
   <div class="app">
     <div class="main-container container">

@@ -11925,78 +11925,6 @@ setTimeout(function () {
 module.exports = Vue;
 }).call(this,require('_process'))
 },{"_process":1}],5:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-
-var RandomWord = require('./random-word.vue');
-var SM = require('./sm.vue');
-exports.default = {
-  data: function data() {
-    return {};
-  },
-
-  methods: {
-    switchApp: function switchApp(op) {
-      this.$parent.switchApp(op);
-    }
-  },
-  components: {
-    'random-word': RandomWord,
-    'sm-vue': SM
-  }
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <img class=\"aboutimgs\" src=\"images/aboutus1.jpg\" alt=\"aboutus\">\n        <img class=\"aboutimgs\" src=\"images/aboutus2.jpg\" alt=\"aboutus\">\n\n        <!-- <random-word></random-word>\n        <sm-vue></sm-vue> -->\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-3b62a282", module.exports)
-  } else {
-    hotAPI.update("_v-3b62a282", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"./random-word.vue":13,"./sm.vue":14,"vue":4,"vue-hot-reload-api":2}],6:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-
-var SM = require('./sm.vue');
-exports.default = {
-  data: function data() {
-    return {};
-  },
-
-  methods: {
-    switchApp: function switchApp(op) {
-      this.$parent.switchApp(op);
-    }
-  },
-  components: {
-    'sm-vue': SM
-  }
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Admin !!\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-398ddc23", module.exports)
-  } else {
-    hotAPI.update("_v-398ddc23", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"./sm.vue":14,"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12014,7 +11942,91 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <img class=\"contactimg\" src=\"images/contactus.jpg\" alt=\"aboutus\">\n        <h4> Mail us @ babymaneesha@gmail.com </h4>\n        <h4> Call us @ 7306826086 </h4>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <img class=\"aboutimgs\" src=\"images/aboutus1.jpg\" alt=\"aboutus\">\n        <img class=\"aboutimgs\" src=\"images/aboutus2.jpg\" alt=\"aboutus\">\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-3b62a282", module.exports)
+  } else {
+    hotAPI.update("_v-3b62a282", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: this.$parent.activeApp,
+      urlbase: this.$parent.urlbase
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    },
+    logout: function logout() {
+      var self = this;
+      self.$http.post(self.urlbase + '/logout', {}).then(function (response) {
+        console.log(response);
+        self.closeNav();
+        self.switchApp('');
+      }, function (error) {
+        console.log(error);
+        console.log("no data found!!");
+        self.closeNav();
+        self.switchApp('');
+      });
+    },
+    openNav: function openNav() {
+      document.getElementById("mySidenav").style.width = "150px";
+      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    },
+    closeNav: function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
+      document.body.style.backgroundColor = "white";
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a href=\"#\">Home</a>\n  <a href=\"#\">Common</a>\n  <a href=\"#\">Hub</a>\n  <a href=\"#\">Posts</a>\n  <a><span @click=\"logout()\">Logout</span></a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Admin !!\n    </div>\n  </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-398ddc23", module.exports)
+  } else {
+    hotAPI.update("_v-398ddc23", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <img class=\"contactimg\" src=\"images/contactus.jpg\" alt=\"aboutus\">\n        <h4> Mail us @ babymaneesha@gmail.com </h4>\n        <h4> Call us @ 7306826086 </h4>\n    </div>\n  </div>\n\n  <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12064,7 +12076,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <!-- <div id=\"homehr\"></div> -->\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      \n  \t</div>\n  </div>\n\n   <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      \n  \t</div>\n  </div>\n\n   <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12131,7 +12143,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div id=\"login-box\" class=\"app\">\n    <h3>Sign in to Your Account</h3>\n    <div class=\"main-container container\">\n      <form v-on:enter=\"checkLogin()\">\n        <div class=\"form-group\">\n          <input type=\"text\" id=\"username\" v-model=\"username\" placeholder=\"Username\" class=\"form-control\">\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" id=\"username\" v-model=\"password\" class=\"form-control\" placeholder=\"Password\">\n        </div>\n        <button type=\"button\" class=\"btn btn-waring btn-lg btn-block\" @click=\"checkLogin()\">Login</button>\n      </form>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div id=\"login-box\" class=\"app\">\n    <h3>Sign in to Your Account</h3>\n    <div class=\"main-container container\">\n      <form v-on:enter=\"checkLogin()\">\n        <div class=\"form-group\">\n          <input type=\"text\" id=\"username\" v-model=\"username\" placeholder=\"Username\" class=\"form-control\">\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" id=\"username\" v-model=\"password\" class=\"form-control\" placeholder=\"Password\">\n        </div>\n        <button type=\"button\" class=\"btn btn-waring btn-lg btn-block\" @click=\"checkLogin()\">Login</button>\n      </form>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12186,7 +12198,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <random-word></random-word>\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        <random-word></random-word>\n        <sm-vue></sm-vue>\n    </div>\n  </div>\n\n  <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12241,7 +12253,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div v-if=\"activeApp != ''\">\n  <div id=\"mySidenav\" class=\"sidenav\">\n    <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Common</a>\n    <a href=\"#\">Hub</a>\n    <a href=\"#\">Posts</a>\n    <a><span @click=\"logout()\">Logout</span></a>\n  </div>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Parents !!\n    </div>\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a href=\"#\">Home</a>\n  <a href=\"#\">Common</a>\n  <a href=\"#\">Hub</a>\n  <a href=\"#\">Posts</a>\n  <a><span @click=\"logout()\">Logout</span></a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Parents !!\n    </div>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

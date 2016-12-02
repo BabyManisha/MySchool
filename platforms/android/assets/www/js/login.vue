@@ -1,6 +1,6 @@
 <template>
 <div id="homeapp">
-  <nav id="nav-id" class="navbar navbar-inverse">
+  <nav id="nav-id" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <a class="fa fa-arrow-circle-left fa-2x" @click="switchApp('')"></a>
       <div class="navbar-header">

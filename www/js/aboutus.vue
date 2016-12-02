@@ -1,6 +1,6 @@
 <template>
 <div id="homeapp">
-  <nav id="nav-id" class="navbar navbar-inverse">
+  <nav id="nav-id" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <a class="fa fa-arrow-circle-left fa-2x" @click="switchApp('')"></a>
       <div class="navbar-header">
@@ -13,9 +13,6 @@
     <div class="main-container container">
         <img class="aboutimgs" src="images/aboutus1.jpg" alt="aboutus">
         <img class="aboutimgs"src="images/aboutus2.jpg" alt="aboutus">
-
-        <!-- <random-word></random-word>
-        <sm-vue></sm-vue> -->
     </div>
   </div>
 
@@ -30,8 +27,6 @@
 </template>
 
 <script>
-var RandomWord = require('./random-word.vue')
-var SM = require('./sm.vue')
 export default {
   data () {
     return {
@@ -41,10 +36,6 @@ export default {
     switchApp: function(op){
       this.$parent.switchApp(op);
     }
-  },
-  components: {
-    'random-word': RandomWord,
-    'sm-vue': SM,
   }
 }
 </script>

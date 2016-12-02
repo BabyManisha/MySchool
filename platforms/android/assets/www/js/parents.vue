@@ -1,18 +1,16 @@
 <template>
 
-  <div v-if="activeApp != ''">
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn fa fa-times" @click="closeNav()"></a>
-      <a href="#">Home</a>
-      <a href="#">Common</a>
-      <a href="#">Hub</a>
-      <a href="#">Posts</a>
-      <a><span @click="logout()">Logout</span></a>
-    </div>
+  <div id="mySidenav" class="sidenav" v-if="activeApp != ''">
+    <a href="javascript:void(0)" class="closebtn fa fa-times" @click="closeNav()"></a>
+    <a href="#">Home</a>
+    <a href="#">Common</a>
+    <a href="#">Hub</a>
+    <a href="#">Posts</a>
+    <a><span @click="logout()">Logout</span></a>
   </div>
 
   <div id="homeapp">
-    <nav id="nav-id" class="navbar navbar-inverse">
+    <nav id="nav-id" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <a class="fa fa-bars fa-2x" @click="openNav()"></a>
         <div class="navbar-header">
