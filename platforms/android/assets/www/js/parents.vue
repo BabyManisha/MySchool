@@ -1,9 +1,9 @@
 <template>
-
   <div id="mySidenav" class="sidenav" v-if="activeApp != ''">
     <a href="javascript:void(0)" class="closebtn fa fa-times" @click="closeNav()"></a>
     <a href="#">Home</a>
-    <a href="#">Common</a>
+    <a href="#">Class</a>
+    <a href="#">School</a>
     <a href="#">Hub</a>
     <a href="#">Posts</a>
     <a><span @click="logout()">Logout</span></a>
@@ -21,6 +21,20 @@
     <div class="app">
       <div class="main-container container">
           Welcome Parents !!
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img id="dimg" src="images/parents.png" alt="parent image">
+                <div class="caption">
+                  <h3>{{userDetails.name}}</h3>
+                  <p>{{userDetails.username}}</p>
+                  <p>{{userDetails._id}}</p>
+                  <p>{{userDetails.phoneNumber}}</p>
+                  <a href="images/parents.png" download>Download Image</a>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
@@ -31,36 +45,27 @@ export default {
   data () {
     return {
       activeApp: this.$parent.activeApp,
-      urlbase: this.$parent.urlbase
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails
     }
+  },
+  created: function(){
+    console.log(this.userDetails);
   },
   methods: {
     switchApp: function(op){
       this.$parent.switchApp(op);
     },
     logout: function(){
-      var self = this;
-      self.$http.post(self.urlbase+'/logout',{})
-      .then(function(response) {
-          console.log(response);
-          self.closeNav();
-          self.switchApp('');
-      }, function(error) {
-          console.log(error);
-          console.log("no data found!!");
-          self.closeNav();
-          self.switchApp('');
-      });
+      this.$parent.logout();
     },
     openNav: function(){
-      document.getElementById("mySidenav").style.width = "150px";
-      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      this.$parent.openNav();
     },
     closeNav: function(){
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
-      document.body.style.backgroundColor = "white";
+      this.$parent.closeNav();
     }
   }
 }

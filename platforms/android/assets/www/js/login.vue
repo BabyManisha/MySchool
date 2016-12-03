@@ -43,7 +43,10 @@ export default {
       username: '',
       password: '',
       userRole:'',
-      urlbase: this.$parent.urlbase
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails
     }
   },
   methods: {
@@ -58,32 +61,33 @@ export default {
         return false;
       }
     },
+    whoami: function(){
+      this.$parent.whoami();
+    },
     checkLogin: function() {
-        var self = this;
-        if(self.checkFields){
-          self.$http.post(self.urlbase+'/login', 
-            { 'username': self.username, 
-              'password': self.password, })
-          .then(function(response) {
-              console.log(response);
-              if(response.success){
-                self.userRole = data.userRole;
-                console.log(self.userRole);
-                self.switchApp('parents');
-              }else{
-                console.log("Login Failed");
-                // alert("Incorrect Username and Password");
-                self.switchApp('parents');
-              }
-          }, function(error) {
-              console.log(error);
-              console.log("no data found!!");
-              // alert("Incorrect Username and Password");
-              self.switchApp('parents');
-          });
-        }else{
-         // alert("Please Provide Valid Username and Password");
-        }
+      var self = this;
+      if(self.checkFields()){
+        self.$http.post(self.urlbase+'/login', 
+          { 'username': self.username, 
+            'password': self.password })
+        .then(function(response) {
+            console.log(response);
+            if(response.data.success || response.data.loggedin){
+              self.whoami();
+            }else{
+              self.username = '';
+              self.password = '';
+              console.log("Login Failed Due To Invalid Details");
+              alert("Incorrect Username and Password");
+            }
+        }, function(error) {
+            console.log(error);
+            console.log("no data found!!");
+            alert("Incorrect Username and Password");
+        });
+      }else{
+        alert("Please Provide Valid Username and Password");
+      }
     }
   }
 }
