@@ -1,9 +1,14 @@
 <template>
     <div class="app">
       <div class="main-container container">
-          Welcome {{userDetails.name}} !!
+          <!-- Welcome {{userDetails.name}} !! -->
           
-          Hub is Under Development!!
+          <h3>Hub is Under Development!!</h3>
+
+          <!-- 4:3 aspect ratio -->
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe width="500" height="360" src="https://www.youtube.com/embed/Z2Og-40HZZM?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+          </div>
 
       </div>
     </div>

@@ -12148,12 +12148,12 @@ exports.default = {
     },
     openNav: function openNav() {
       document.getElementById("mySidenav").style.width = "150px";
-      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
+      // document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     },
     closeNav: function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
+      // document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
       document.body.style.backgroundColor = "white";
     }
   },
@@ -12551,7 +12551,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      \n      Hub is Under Development!!\n\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <!-- Welcome {{userDetails.name}} !! -->\n      \n      <h3>Hub is Under Development!!</h3>\n\n      <!-- 4:3 aspect ratio -->\n      <div class=\"embed-responsive embed-responsive-4by3\">\n        <iframe width=\"500\" height=\"360\" src=\"https://www.youtube.com/embed/Z2Og-40HZZM?feature=player_embedded\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n      </div>\n\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12598,7 +12598,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <img class=\"contactimg\" src=\"posts/ps01.jpg\" alt=\"Post1\">\n      <img class=\"aboutimgs\" src=\"posts/ps02.jpg\" alt=\"Post2\">\n      <img class=\"contactimg\" src=\"posts/ps03.jpg\" alt=\"Post3\">\n      <img class=\"aboutimgs\" src=\"posts/ps04.jpg\" alt=\"Post4\">\n      <img class=\"contactimg\" src=\"posts/ps05.jpg\" alt=\"Post5\">\n  </div>\n</div>\n\n\n<!-- <div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\">\n          <div class=\"thumbnail\">\n            <img id=\"dimg\" src=\"images/parents.png\" alt=\"parent image\">\n            <div class=\"caption\">\n              <h3>{{userDetails._id}}</h3>\n              <p>{{userDetails.username}}</p>\n              <p>{{userDetails.role}}</p>\n              <p>{{userDetails.phoneNumber}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div> -->\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <img class=\"contactimg\" src=\"posts/ps01.jpg\" alt=\"Post1\">\n      <img class=\"aboutimgs\" src=\"posts/ps02.jpg\" alt=\"Post2\">\n      <img class=\"contactimg\" src=\"posts/ps03.jpg\" alt=\"Post3\">\n      <img class=\"aboutimgs\" src=\"posts/ps04.jpg\" alt=\"Post4\">\n      <img class=\"contactimg\" src=\"posts/ps05.jpg\" alt=\"Post5\">\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

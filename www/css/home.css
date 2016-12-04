@@ -136,8 +136,7 @@ img.aboutimgs, img.contactimg{
 
 
 
-
-
+/*side nav css starts here......*/
 .sidenav {
     height: 100%;
     width: 0;
@@ -184,3 +183,4 @@ img.aboutimgs, img.contactimg{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+/*side nav css ends here......*/

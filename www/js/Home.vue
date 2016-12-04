@@ -145,12 +145,12 @@ export default {
       },
       openNav: function(){
         document.getElementById("mySidenav").style.width = "150px";
-        document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
+        // document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       },
       closeNav: function(){
         document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
+        // document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
         document.body.style.backgroundColor = "white";
       }
   	},

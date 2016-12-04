@@ -120,13 +120,6 @@ img.aboutimgs, img.contactimg{
 	box-shadow:1px 1px 5px 5px #e6b4b4;
 }
 
-/*img.contactimg{
-	width: 100%;
-	height: 150px;
-	border: 1px solid #ff6b35;
-	box-shadow:1px 1px 5px 5px #e6b4b4;
-}*/
-
 .main-container.container{
 	width: 80%;
 	margin: 20px auto;
@@ -143,8 +136,7 @@ img.aboutimgs, img.contactimg{
 
 
 
-
-
+/*side nav css starts here......*/
 .sidenav {
     height: 100%;
     width: 0;
@@ -191,3 +183,4 @@ img.aboutimgs, img.contactimg{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+/*side nav css ends here......*/
