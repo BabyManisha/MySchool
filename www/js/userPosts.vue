@@ -1,6 +1,17 @@
 <template>
     <div class="app">
       <div class="main-container container">
+          <img class="contactimg"src="posts/ps01.jpg" alt="Post1">
+          <img class="aboutimgs" src="posts/ps02.jpg" alt="Post2">
+          <img class="contactimg"src="posts/ps03.jpg" alt="Post3">
+          <img class="aboutimgs"src="posts/ps04.jpg" alt="Post4">
+          <img class="contactimg"src="posts/ps05.jpg" alt="Post5">
+      </div>
+    </div>
+
+
+    <!-- <div class="app">
+      <div class="main-container container">
           Welcome {{userDetails.name}} !!
           <div class="row">
             <div class="col-sm-6 col-md-4">
@@ -16,7 +27,7 @@
             </div>
           </div>
       </div>
-    </div>
+    </div> -->
 </template>
 
 <script>
