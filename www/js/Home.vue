@@ -74,7 +74,10 @@ export default {
         role: '',
         userRole: {'parent' : 'parents', 'faculty' : 'teachers', 'schooladmin' : 'admin'},
         userDetails: {},
+        classDetails: {},
         schoolDetails: {},
+        classEvents: {},
+        schoolEvents: {},
         posts: {},
     	}
   	},

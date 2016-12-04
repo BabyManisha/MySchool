@@ -12079,7 +12079,10 @@ exports.default = {
       role: '',
       userRole: { 'parent': 'parents', 'faculty': 'teachers', 'schooladmin': 'admin' },
       userDetails: {},
+      classDetails: {},
       schoolDetails: {},
+      classEvents: {},
+      schoolEvents: {},
       posts: {}
     };
   },
@@ -12469,7 +12472,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":2}],15:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -12483,8 +12486,26 @@ exports.default = {
       user: this.$parent.user,
       role: this.$parent.role,
       userDetails: this.$parent.userDetails,
+      classDetails: this.$parent.userDetails,
       schoolDetails: this.$parent.schoolDetails,
-      posts: this.$parent.posts
+      // classEvents: this.$parent.classEvents,
+      schoolEvents: this.$parent.schoolEvents,
+      posts: this.$parent.posts,
+      classEvents: [{
+        'name': "10th Class Group discussion",
+        'details': "Classwise group Discussion Event",
+        'place': "GoldenOak School 10th class",
+        'date': "04-12-2016 10AM - 5PM",
+        'images': ['ce1.jpg', 'ce2.jpg', 'ce3.jpg', 'ce7.jpg'],
+        'videos': ['tUcEwvjckk0']
+      }, {
+        'name': "Technical Seminar",
+        'details': "All about latest technology",
+        'place': "GoldenOak School Seminar Hall",
+        'date': "02-12-2016 10AM - 5PM",
+        'images': ['ce4.jpg', 'ce5.jpg', 'ce6.jpg', 'ce8.jpg'],
+        'videos': ['5CRGKGHcrKA']
+      }]
     };
   },
 
@@ -12504,7 +12525,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      \n      Class Details Under Development!!\n\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <!-- Welcome {{userDetails.name}} !! -->\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\" v-for=\"ev in classEvents\">\n          <div class=\"thumbnail\">\n            <img v-bind:src=\"'classEvents/'+ev.images[0]\" alt=\"...\">\n            <div class=\"caption\">\n              <h3>{{ev.name}}</h3>\n              <p><b> Description </b>{{ev.details}}</p>\n              <p><b> Venue </b>{{ev.place}}</p>\n              <p><b> Date and Time </b>{{ev.date}}</p>\n\n              <h3>\n                <div class=\"embed-responsive embed-responsive-4by3\">\n                  <iframe width=\"500\" height=\"360\" v-bind:src=\"'https://www.youtube.com/embed/'+ev.videos[0]+'?feature=player_embedded'\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n                </div>\n              </h3>\n              <h3> Gallery </h3>\n              <div class=\"row\">\n                <div class=\"col-xs-6 col-md-3\" v-for=\"im in ev.images\">\n                  <a href=\"#\" class=\"thumbnail\">\n                    <img v-bind:src=\"'classEvents/'+im\" alt=\"...\">\n                  </a>\n                </div>\n              </div>\n\n              <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Details</a></p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12635,7 +12656,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":2}],19:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -12649,8 +12670,26 @@ exports.default = {
       user: this.$parent.user,
       role: this.$parent.role,
       userDetails: this.$parent.userDetails,
+      classDetails: this.$parent.userDetails,
       schoolDetails: this.$parent.schoolDetails,
-      posts: this.$parent.posts
+      classEvents: this.$parent.classEvents,
+      // schoolEvents: this.$parent.schoolEvents,
+      posts: this.$parent.posts,
+      schoolEvents: [{
+        'name': "Fresher's Party 2016",
+        'details': "Fresher's Day is a welcome party to newcomers and there is a need to be friendly and motivate juniors",
+        'place': "GoldenOak School Auditorium",
+        'date': "13-12-2016 10AM - 5PM",
+        'images': ['se1.jpg', 'se2.jpg', 'se6.jpg'],
+        'videos': ['SqYJYcSTUac']
+      }, {
+        'name': "teacher's Party 2016",
+        'details': "Teacher's Day is a Thank you party to Teachers for their effort towards students",
+        'place': "GoldenOak School Seminar Hall",
+        'date': "05-09-2016 10AM - 5PM",
+        'images': ['se3.jpg', 'se4.jpg', 'se5.jpg'],
+        'videos': ['MI01gcYDSWI']
+      }]
     };
   },
 
@@ -12670,7 +12709,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      \n      School Details Under Development!!\n\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <!-- Welcome {{userDetails.name}} !! -->\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\" v-for=\"ev in schoolEvents\">\n          <div class=\"thumbnail\">\n            <img v-bind:src=\"'schoolEvents/'+ev.images[0]\" alt=\"...\">\n            <div class=\"caption\">\n              <h3>{{ev.name}}</h3>\n              <p><b> Description </b>{{ev.details}}</p>\n              <p><b> Venue </b>{{ev.place}}</p>\n              <p><b> Date and Time </b>{{ev.date}}</p>\n\n              <h3>\n                <div class=\"embed-responsive embed-responsive-4by3\">\n                  <iframe width=\"500\" height=\"360\" v-bind:src=\"'https://www.youtube.com/embed/'+ev.videos[0]+'?feature=player_embedded'\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n                </div>\n              </h3>\n\n              <h3> Gallery </h3>\n              <div class=\"row\">\n                <div class=\"col-xs-6 col-md-3\" v-for=\"im in ev.images\">\n                  <a href=\"#\" class=\"thumbnail\">\n                    <img v-bind:src=\"'schoolEvents/'+im\" alt=\"...\">\n                  </a>\n                </div>\n              </div>\n\n              <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Details</a></p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
