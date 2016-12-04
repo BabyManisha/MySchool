@@ -11959,11 +11959,29 @@ if (module.hot) {(function () {  module.hot.accept()
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+
+var userClass = require('./userClass.vue');
+var userSchool = require('./userSchool.vue');
+var userHub = require('./userHub.vue');
+var userPosts = require('./userPosts.vue');
+var userProfile = require('./userProfile.vue');
 exports.default = {
   data: function data() {
     return {
+      userApps: { 'userClass': 'Home',
+        'userSchool': 'School',
+        'userHub': 'Hub',
+        'userPosts': 'Posts',
+        'userProfile': 'Profile' },
       activeApp: this.$parent.activeApp,
-      urlbase: this.$parent.urlbase
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
     };
   },
 
@@ -11971,33 +11989,30 @@ exports.default = {
     switchApp: function switchApp(op) {
       this.$parent.switchApp(op);
     },
+    switchUserApp: function switchUserApp(op) {
+      this.$parent.switchUserApp(op);
+      this.$parent.closeNav();
+    },
     logout: function logout() {
-      var self = this;
-      self.$http.post(self.urlbase + '/logout', {}).then(function (response) {
-        console.log(response);
-        self.closeNav();
-        self.switchApp('');
-      }, function (error) {
-        console.log(error);
-        console.log("no data found!!");
-        self.closeNav();
-        self.switchApp('');
-      });
+      this.$parent.logout();
     },
     openNav: function openNav() {
-      document.getElementById("mySidenav").style.width = "150px";
-      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      this.$parent.openNav();
     },
     closeNav: function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
-      document.body.style.backgroundColor = "white";
+      this.$parent.closeNav();
     }
+  },
+  components: {
+    'user-class': userClass,
+    'user-school': userSchool,
+    'user-hub': userHub,
+    'user-posts': userPosts,
+    'user-profile': userProfile
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a href=\"#\">Home</a>\n  <a href=\"#\">Common</a>\n  <a href=\"#\">Hub</a>\n  <a href=\"#\">Posts</a>\n  <a><span @click=\"logout()\">Logout</span></a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Admin !!\n    </div>\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a v-for=\"(ky, vl) in userApps\" @click=\"switchUserApp(ky)\">{{vl}}</a>\n  <a @click=\"logout()\">Logout</a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div v-if=\"useractiveApp != ''\">\n    <user-class v-if=\"useractiveApp == 'userClass'\"></user-class>\n    <user-school v-if=\"useractiveApp == 'userSchool'\"></user-school>\n    <user-hub v-if=\"useractiveApp == 'userHub'\"></user-hub>\n    <user-posts v-if=\"useractiveApp == 'userPosts'\"></user-posts>\n    <user-profile v-if=\"useractiveApp == 'userProfile'\"></user-profile>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12008,7 +12023,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-398ddc23", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+},{"./userClass.vue":15,"./userHub.vue":16,"./userPosts.vue":17,"./userProfile.vue":18,"./userSchool.vue":19,"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12056,13 +12071,90 @@ exports.default = {
   data: function data() {
     return {
       activeApp: '',
-      urlbase: 'https://deals.shivaprasanth.info'
+      useractiveApp: '',
+      // urlbase: 'http://52.220.231.225'
+      urlbase: 'http://myschool.babymanisha.com',
+      user: '',
+      role: '',
+      userRole: { 'parent': 'parents', 'faculty': 'teachers', 'schooladmin': 'admin' },
+      userDetails: {},
+      schoolDetails: {},
+      posts: {}
     };
   },
 
   methods: {
-    switchApp: function switchApp(op) {
+    downloadImage: function downloadImage(url) {
+      console.log(url);
+      alert(url);
+      cordova.plugins.photoLibrary.saveImage(url, 'My album', function (resp) {
+        console.log("Downloaded successfully", resp);
+        alert("Downloaded successfully", resp);
+      }, function (err) {
+        console.log("Downloaded successfully", resp);
+        alert("error occured", err);
+      });
+    },
+    switchApp: function switchApp(op, userop) {
       this.activeApp = op;
+      if (userop) {
+        this.switchUserApp(userop);
+      } else {
+        this.switchUserApp('');
+      }
+    },
+    switchUserApp: function switchUserApp(op) {
+      console.log(op);
+      this.useractiveApp = op;
+    },
+    whoami: function whoami() {
+      var self = this;
+      self.$http.get(self.urlbase + '/whoami').then(function (response) {
+        console.log(response);
+        self.user = response.data.username;
+        if (response.role) {
+          self.role = self.userRole[response.role];
+        } else {
+          self.role = 'parents';
+        }
+        console.log(self.user);
+        console.log(self.role);
+        self.userDetails = response.data;
+        console.log(self.userDetails);
+        self.switchApp(self.role, 'userClass');
+      }, function (error) {
+        console.log(error);
+        alert("no user found");
+      });
+    },
+    logout: function logout() {
+      var self = this;
+      self.$http.get(self.urlbase + '/logout', {}).then(function (response) {
+        console.log(response);
+        if (response.status == 200) {
+          self.user = '';
+          self.role = '';
+          self.closeNav();
+          self.switchApp('');
+        }
+      }, function (error) {
+        console.log(error);
+        console.log("no data found!!");
+        self.user = '';
+        self.role = '';
+        self.closeNav();
+        self.switchApp('');
+      });
+    },
+    openNav: function openNav() {
+      document.getElementById("mySidenav").style.width = "150px";
+      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    },
+    closeNav: function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
+      document.body.style.backgroundColor = "white";
     }
   },
   components: {
@@ -12076,7 +12168,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      \n  \t</div>\n  </div>\n\n   <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav>\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      <!-- <a href=\"images/parents.png\" download \n                  @click=\"downloadImage('images/parents.png')\">Download Image</a> -->\n      <!-- <a href=\"images/parents.png\"  \n                  @click=\"downloadImage('file://images/parents.png')\">Download Image</a> -->\n  \t</div>\n  </div>\n\n   <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12099,7 +12191,10 @@ exports.default = {
       username: '',
       password: '',
       userRole: '',
-      urlbase: this.$parent.urlbase
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails
     };
   },
 
@@ -12115,29 +12210,31 @@ exports.default = {
         return false;
       }
     },
+    whoami: function whoami() {
+      this.$parent.whoami();
+    },
     checkLogin: function checkLogin() {
       var self = this;
-      if (self.checkFields) {
+      if (self.checkFields()) {
         self.$http.post(self.urlbase + '/login', { 'username': self.username,
-          'password': self.password }).then(function (response) {
+          'password': self.password,
+          'schoolid': 'goldenoaks01' }).then(function (response) {
           console.log(response);
-          if (response.success) {
-            self.userRole = data.userRole;
-            console.log(self.userRole);
-            self.switchApp('parents');
+          if (response.data.success || response.data.loggedin) {
+            self.whoami();
           } else {
-            console.log("Login Failed");
-            // alert("Incorrect Username and Password");
-            self.switchApp('parents');
+            self.username = '';
+            self.password = '';
+            console.log("Login Failed Due To Invalid Details");
+            alert("Incorrect Username and Password");
           }
         }, function (error) {
           console.log(error);
           console.log("no data found!!");
-          // alert("Incorrect Username and Password");
-          self.switchApp('parents');
+          alert("Incorrect Username and Password");
         });
       } else {
-        // alert("Please Provide Valid Username and Password");
+        alert("Please Provide Valid Username and Password");
       }
     }
   }
@@ -12161,6 +12258,21 @@ var HomeVue = require('./home.vue')
 
 
 Vue.use(VueResource);
+
+Vue.http.options.emulateJSON = true;
+Vue.http.options.emulateHTTP = true;
+Vue.http.options.xhr = {withCredentials: true};
+
+// Add interceptors
+//Vue.http.interceptors.push({})
+// Vue.http.interceptors.push((request, next) => {
+//   // Modify headers
+//   request.headers = {
+//   	'Access-Control-Allow-Origin': '*'
+//     // 'x-gnana-tenant': 'tenant',
+//     // 'x-gnana-username': 'username'
+//   }
+// });
 
 var vm = new Vue({
   el: 'body',
@@ -12215,11 +12327,29 @@ if (module.hot) {(function () {  module.hot.accept()
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+
+var userClass = require('./userClass.vue');
+var userSchool = require('./userSchool.vue');
+var userHub = require('./userHub.vue');
+var userPosts = require('./userPosts.vue');
+var userProfile = require('./userProfile.vue');
 exports.default = {
   data: function data() {
     return {
+      userApps: { 'userClass': 'Home',
+        'userSchool': 'School',
+        'userHub': 'Hub',
+        'userPosts': 'Posts',
+        'userProfile': 'Profile' },
       activeApp: this.$parent.activeApp,
-      urlbase: this.$parent.urlbase
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
     };
   },
 
@@ -12227,33 +12357,33 @@ exports.default = {
     switchApp: function switchApp(op) {
       this.$parent.switchApp(op);
     },
+    switchUserApp: function switchUserApp(op) {
+      console.log(op);
+      this.$parent.switchUserApp(op);
+      this.$parent.closeNav();
+      console.log(this.useractiveApp);
+      this.useractiveApp = this.$parent.useractiveApp;
+    },
     logout: function logout() {
-      var self = this;
-      self.$http.post(self.urlbase + '/logout', {}).then(function (response) {
-        console.log(response);
-        self.closeNav();
-        self.switchApp('');
-      }, function (error) {
-        console.log(error);
-        console.log("no data found!!");
-        self.closeNav();
-        self.switchApp('');
-      });
+      this.$parent.logout();
     },
     openNav: function openNav() {
-      document.getElementById("mySidenav").style.width = "150px";
-      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      this.$parent.openNav();
     },
     closeNav: function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
-      document.body.style.backgroundColor = "white";
+      this.$parent.closeNav();
     }
+  },
+  components: {
+    'user-class': userClass,
+    'user-school': userSchool,
+    'user-hub': userHub,
+    'user-posts': userPosts,
+    'user-profile': userProfile
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a href=\"#\">Home</a>\n  <a href=\"#\">Common</a>\n  <a href=\"#\">Hub</a>\n  <a href=\"#\">Posts</a>\n  <a><span @click=\"logout()\">Logout</span></a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div class=\"app\">\n    <div class=\"main-container container\">\n        Welcome Parents !!\n    </div>\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a v-for=\"(ky, vl) in userApps\" @click=\"switchUserApp(ky)\">{{vl}}</a>\n  <a @click=\"logout()\">Logout</a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div v-if=\"useractiveApp != ''\">\n    <user-class :class=\"useractiveApp\" v-if=\"useractiveApp == 'userClass'\"></user-class>\n    <user-school :class=\"useractiveApp\" v-if=\"useractiveApp == 'userSchool'\"></user-school>\n    <user-hub :class=\"useractiveApp\" v-if=\"useractiveApp == 'userHub'\"></user-hub>\n    <user-posts :class=\"useractiveApp\" v-if=\"useractiveApp == 'userPosts'\"></user-posts>\n    <user-profile :class=\"useractiveApp\" v-if=\"useractiveApp == 'userProfile'\"></user-profile>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12264,7 +12394,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-b1e80c46", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
+},{"./userClass.vue":15,"./userHub.vue":16,"./userPosts.vue":17,"./userProfile.vue":18,"./userSchool.vue":19,"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12338,6 +12468,219 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.createRecord("_v-c5f25094", module.exports)
   } else {
     hotAPI.update("_v-c5f25094", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],15:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: this.$parent.activeApp,
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    },
+    logout: function logout() {
+      this.$parent.logout();
+    },
+    openNav: function openNav() {
+      this.$parent.openNav();
+    },
+    closeNav: function closeNav() {
+      this.$parent.closeNav();
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      \n      Class Details Under Development!!\n\n  </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-94495f7e", module.exports)
+  } else {
+    hotAPI.update("_v-94495f7e", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],16:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: this.$parent.activeApp,
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    },
+    logout: function logout() {
+      this.$parent.logout();
+    },
+    openNav: function openNav() {
+      this.$parent.openNav();
+    },
+    closeNav: function closeNav() {
+      this.$parent.closeNav();
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      \n      Hub is Under Development!!\n\n  </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-bb88e504", module.exports)
+  } else {
+    hotAPI.update("_v-bb88e504", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],17:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: this.$parent.activeApp,
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    },
+    logout: function logout() {
+      this.$parent.logout();
+    },
+    openNav: function openNav() {
+      this.$parent.openNav();
+    },
+    closeNav: function closeNav() {
+      this.$parent.closeNav();
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\">\n          <div class=\"thumbnail\">\n            <img id=\"dimg\" src=\"images/parents.png\" alt=\"parent image\">\n            <div class=\"caption\">\n              <h3>{{userDetails._id}}</h3>\n              <p>{{userDetails.username}}</p>\n              <p>{{userDetails.role}}</p>\n              <p>{{userDetails.phoneNumber}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-2edd7d1c", module.exports)
+  } else {
+    hotAPI.update("_v-2edd7d1c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],18:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      userDetails: this.$parent.userDetails
+    };
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\">\n          <div class=\"thumbnail\">\n            <img id=\"dimg\" src=\"images/parents.png\" alt=\"parent image\">\n            <div class=\"caption\">\n              <h3>{{userDetails._id}}</h3>\n              <p>{{userDetails.username}}</p>\n              <p>{{userDetails.role}}</p>\n              <p>{{userDetails.phoneNumber}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-22ab67b2", module.exports)
+  } else {
+    hotAPI.update("_v-22ab67b2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],19:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      activeApp: this.$parent.activeApp,
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
+    };
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    },
+    logout: function logout() {
+      this.$parent.logout();
+    },
+    openNav: function openNav() {
+      this.$parent.openNav();
+    },
+    closeNav: function closeNav() {
+      this.$parent.closeNav();
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      \n      School Details Under Development!!\n\n  </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-13c2c9fb", module.exports)
+  } else {
+    hotAPI.update("_v-13c2c9fb", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":2}]},{},[10]);

@@ -1,12 +1,8 @@
 <template>
-
   <div id="mySidenav" class="sidenav" v-if="activeApp != ''">
     <a href="javascript:void(0)" class="closebtn fa fa-times" @click="closeNav()"></a>
-    <a href="#">Home</a>
-    <a href="#">Common</a>
-    <a href="#">Hub</a>
-    <a href="#">Posts</a>
-    <a><span @click="logout()">Logout</span></a>
+    <a v-for="(ky, vl) in userApps" @click="switchUserApp(ky)">{{vl}}</a>
+    <a @click="logout()">Logout</a>
   </div>
 
   <div id="homeapp">
@@ -18,50 +14,65 @@
         </div>
       </div>
     </nav>
-    <div class="app">
-      <div class="main-container container">
-          Welcome Teacher !!
-      </div>
+    <div v-if="useractiveApp != ''">
+      <user-class :class="useractiveApp" v-if="useractiveApp == 'userClass'"></user-class>
+      <user-school :class="useractiveApp" v-if="useractiveApp == 'userSchool'"></user-school>
+      <user-hub :class="useractiveApp" v-if="useractiveApp == 'userHub'"></user-hub>
+      <user-posts :class="useractiveApp" v-if="useractiveApp == 'userPosts'"></user-posts>
+      <user-profile :class="useractiveApp" v-if="useractiveApp == 'userProfile'"></user-profile>
     </div>
   </div>
 </template>
 
 <script>
+var userClass = require('./userClass.vue')
+var userSchool = require('./userSchool.vue')
+var userHub = require('./userHub.vue')
+var userPosts = require('./userPosts.vue')
+var userProfile = require('./userProfile.vue')
 export default {
   data () {
     return {
+      userApps: {'userClass' : 'Home', 
+                  'userSchool': 'School', 
+                  'userHub' : 'Hub', 
+                  'userPosts' : 'Posts', 
+                  'userProfile' : 'Profile'},
       activeApp: this.$parent.activeApp,
-      urlbase: this.$parent.urlbase
+      useractiveApp: this.$parent.useractiveApp,
+      urlbase: this.$parent.urlbase,
+      user: this.$parent.user,
+      role: this.$parent.role,
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
     }
   },
   methods: {
     switchApp: function(op){
       this.$parent.switchApp(op);
     },
+    switchUserApp: function(op){
+      this.$parent.switchUserApp(op);
+      this.$parent.closeNav();
+      this.useractiveApp = this.$parent.useractiveApp;
+    },
     logout: function(){
-      var self = this;
-      self.$http.post(self.urlbase+'/logout',{})
-      .then(function(response) {
-          console.log(response);
-          self.closeNav();
-          self.switchApp('');
-      }, function(error) {
-          console.log(error);
-          console.log("no data found!!");
-          self.closeNav();
-          self.switchApp('');
-      });
+      this.$parent.logout();
     },
     openNav: function(){
-      document.getElementById("mySidenav").style.width = "150px";
-      document.getElementById("nav-id").style.backgroundColor = "rgba(255,107,53,0.5)";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      this.$parent.openNav();
     },
     closeNav: function(){
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("nav-id").style.backgroundColor = "#ff6b35";
-      document.body.style.backgroundColor = "white";
+      this.$parent.closeNav();
     }
+  },
+  components: {
+    'user-class': userClass,
+    'user-school': userSchool,
+    'user-hub': userHub,
+    'user-posts': userPosts,
+    'user-profile': userProfile,
   }
 }
 </script>

@@ -29,8 +29,8 @@
            </button>
       <!-- <a href="images/parents.png" download 
                   @click="downloadImage('images/parents.png')">Download Image</a> -->
-      <a href="images/parents.png" download 
-                  @click="downloadImage('file://images/parents.png')">Download Image</a>
+      <!-- <a href="images/parents.png"  
+                  @click="downloadImage('file://images/parents.png')">Download Image</a> -->
   	</div>
   </div>
 
@@ -67,12 +67,15 @@ export default {
     data () {
       	return {
     		activeApp: '',
+        useractiveApp: '',
         // urlbase: 'http://52.220.231.225'
         urlbase: 'http://myschool.babymanisha.com',
         user: '',
         role: '',
+        userRole: {'parent' : 'parents', 'faculty' : 'teachers', 'schooladmin' : 'admin'},
         userDetails: {},
-        userRole: {'parent' : 'parents', 'faculty' : 'teachers', 'schooladmin' : 'admin'}
+        schoolDetails: {},
+        posts: {},
     	}
   	},
     methods: {
@@ -88,9 +91,18 @@ export default {
             alert("error occured", err);
           });
       },
-  		switchApp: function(op){
+  		switchApp: function(op, userop){
   			this.activeApp = op;
+        if(userop){
+          this.switchUserApp(userop);
+        }else{
+          this.switchUserApp('');
+        }
   		},
+      switchUserApp: function(op){
+          console.log(op);
+          this.useractiveApp = op;
+      },
       whoami: function(){
         var self = this;
         self.$http.get(self.urlbase+'/whoami')
@@ -106,7 +118,7 @@ export default {
             console.log(self.role);
             self.userDetails = response.data;
             console.log(self.userDetails);
-            self.switchApp(self.role);
+            self.switchApp(self.role, 'userClass');
         }, function(error) {
             console.log(error);
             alert("no user found");

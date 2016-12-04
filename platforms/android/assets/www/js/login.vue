@@ -69,7 +69,8 @@ export default {
       if(self.checkFields()){
         self.$http.post(self.urlbase+'/login', 
           { 'username': self.username, 
-            'password': self.password })
+            'password': self.password,
+            'schoolid': 'goldenoaks01'})
         .then(function(response) {
             console.log(response);
             if(response.data.success || response.data.loggedin){

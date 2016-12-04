@@ -24,5 +24,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="~6.0.0" />
-    <hook type="before_compile" src="scripts/vueify-build.js" />
+    <hook src="scripts/vueify-build.js" type="before_compile" />
+    <plugin name="cordova-plugin-photo-library" spec="~1.2.1">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="To choose photos" />
+    </plugin>
 </widget>

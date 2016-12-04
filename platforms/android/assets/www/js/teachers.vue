@@ -1,12 +1,8 @@
 <template>
   <div id="mySidenav" class="sidenav" v-if="activeApp != ''">
     <a href="javascript:void(0)" class="closebtn fa fa-times" @click="closeNav()"></a>
-    <a href="#">Home</a>
-    <a href="#">Class</a>
-    <a href="#">School</a>
-    <a href="#">Hub</a>
-    <a href="#">Posts</a>
-    <a><span @click="logout()">Logout</span></a>
+    <a v-for="(ky, vl) in userApps" @click="switchUserApp(ky)">{{vl}}</a>
+    <a @click="logout()">Logout</a>
   </div>
 
   <div id="homeapp">
@@ -18,45 +14,47 @@
         </div>
       </div>
     </nav>
-    <div class="app">
-      <div class="main-container container">
-          Welcome Teacher !!
-          <div class="row">
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <img id="dimg" src="images/parents.png" alt="parent image">
-                <div class="caption">
-                  <h3>{{userDetails.name}}</h3>
-                  <p>{{userDetails.username}}</p>
-                  <p>{{userDetails._id}}</p>
-                  <p>{{userDetails.phoneNumber}}</p>
-                  <a href="images/parents.png" download>Download Image</a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
+    <div v-if="useractiveApp != ''">
+      <user-class v-if="useractiveApp == 'userClass'"></user-class>
+      <user-school v-if="useractiveApp == 'userSchool'"></user-school>
+      <user-hub v-if="useractiveApp == 'userHub'"></user-hub>
+      <user-posts v-if="useractiveApp == 'userPosts'"></user-posts>
+      <user-profile v-if="useractiveApp == 'userProfile'"></user-profile>
     </div>
   </div>
 </template>
 
 <script>
+var userClass = require('./userClass.vue')
+var userSchool = require('./userSchool.vue')
+var userHub = require('./userHub.vue')
+var userPosts = require('./userPosts.vue')
+var userProfile = require('./userProfile.vue')
 export default {
   data () {
     return {
+      userApps: {'userClass' : 'Home', 
+                  'userSchool': 'School', 
+                  'userHub' : 'Hub', 
+                  'userPosts' : 'Posts', 
+                  'userProfile' : 'Profile'},
       activeApp: this.$parent.activeApp,
+      useractiveApp: this.$parent.useractiveApp,
       urlbase: this.$parent.urlbase,
       user: this.$parent.user,
       role: this.$parent.role,
-      userDetails: this.$parent.userDetails
+      userDetails: this.$parent.userDetails,
+      schoolDetails: this.$parent.schoolDetails,
+      posts: this.$parent.posts
     }
-  },
-  created: function(){
-    console.log(this.userDetails);
   },
   methods: {
     switchApp: function(op){
       this.$parent.switchApp(op);
+    },
+    switchUserApp: function(op){
+      this.$parent.switchUserApp(op);
+      this.$parent.closeNav();
     },
     logout: function(){
       this.$parent.logout();
@@ -67,6 +65,13 @@ export default {
     closeNav: function(){
       this.$parent.closeNav();
     }
+  },
+  components: {
+    'user-class': userClass,
+    'user-school': userSchool,
+    'user-hub': userHub,
+    'user-posts': userPosts,
+    'user-profile': userProfile,
   }
 }
 </script>
