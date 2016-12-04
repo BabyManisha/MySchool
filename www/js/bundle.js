@@ -11992,6 +11992,7 @@ exports.default = {
     switchUserApp: function switchUserApp(op) {
       this.$parent.switchUserApp(op);
       this.$parent.closeNav();
+      this.useractiveApp = this.$parent.useractiveApp;
     },
     logout: function logout() {
       this.$parent.logout();
@@ -12012,7 +12013,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a v-for=\"(ky, vl) in userApps\" @click=\"switchUserApp(ky)\">{{vl}}</a>\n  <a @click=\"logout()\">Logout</a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div v-if=\"useractiveApp != ''\">\n    <user-class v-if=\"useractiveApp == 'userClass'\"></user-class>\n    <user-school v-if=\"useractiveApp == 'userSchool'\"></user-school>\n    <user-hub v-if=\"useractiveApp == 'userHub'\"></user-hub>\n    <user-posts v-if=\"useractiveApp == 'userPosts'\"></user-posts>\n    <user-profile v-if=\"useractiveApp == 'userProfile'\"></user-profile>\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"mySidenav\" class=\"sidenav\" v-if=\"activeApp != ''\">\n  <a href=\"javascript:void(0)\" class=\"closebtn fa fa-times\" @click=\"closeNav()\"></a>\n  <a v-for=\"(ky, vl) in userApps\" @click=\"switchUserApp(ky)\">{{vl}}</a>\n  <a @click=\"logout()\">Logout</a>\n</div>\n\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-bars fa-2x\" @click=\"openNav()\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n  <div v-if=\"useractiveApp != ''\">\n    <user-class :class=\"useractiveApp\" v-if=\"useractiveApp == 'userClass'\"></user-class>\n    <user-school :class=\"useractiveApp\" v-if=\"useractiveApp == 'userSchool'\"></user-school>\n    <user-hub :class=\"useractiveApp\" v-if=\"useractiveApp == 'userHub'\"></user-hub>\n    <user-posts :class=\"useractiveApp\" v-if=\"useractiveApp == 'userPosts'\"></user-posts>\n    <user-profile :class=\"useractiveApp\" v-if=\"useractiveApp == 'userProfile'\"></user-profile>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -12104,7 +12105,6 @@ exports.default = {
       }
     },
     switchUserApp: function switchUserApp(op) {
-      console.log(op);
       this.useractiveApp = op;
     },
     whoami: function whoami() {
@@ -12358,10 +12358,8 @@ exports.default = {
       this.$parent.switchApp(op);
     },
     switchUserApp: function switchUserApp(op) {
-      console.log(op);
       this.$parent.switchUserApp(op);
       this.$parent.closeNav();
-      console.log(this.useractiveApp);
       this.useractiveApp = this.$parent.useractiveApp;
     },
     logout: function logout() {
@@ -12625,7 +12623,7 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      Welcome {{userDetails.name}} !!\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\">\n          <div class=\"thumbnail\">\n            <img id=\"dimg\" src=\"images/parents.png\" alt=\"parent image\">\n            <div class=\"caption\">\n              <h3>{{userDetails._id}}</h3>\n              <p>{{userDetails.username}}</p>\n              <p>{{userDetails.role}}</p>\n              <p>{{userDetails.phoneNumber}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <!-- Welcome {{userDetails.name}} !! -->\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\">\n          <div class=\"thumbnail\">\n            <img id=\"dimg\" src=\"images/parents.png\" alt=\"parent image\">\n            <div class=\"caption\">\n              <h3>{{userDetails.name}}</h3>\n              <p> <b>UserName : </b>{{userDetails.username}}</p>\n              <p> <b>Role : </b>{{userDetails.role}}</p>\n              <p> <b>Email : </b>{{userDetails._id}}</p>\n              <p> <b>Mobile : </b>{{userDetails.phoneNumber}}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

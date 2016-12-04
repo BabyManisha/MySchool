@@ -53,10 +53,8 @@ export default {
       this.$parent.switchApp(op);
     },
     switchUserApp: function(op){
-      console.log(op);
       this.$parent.switchUserApp(op);
       this.$parent.closeNav();
-      console.log(this.useractiveApp);
       this.useractiveApp = this.$parent.useractiveApp;
     },
     logout: function(){

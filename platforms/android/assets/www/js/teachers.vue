@@ -15,11 +15,11 @@
       </div>
     </nav>
     <div v-if="useractiveApp != ''">
-      <user-class v-if="useractiveApp == 'userClass'"></user-class>
-      <user-school v-if="useractiveApp == 'userSchool'"></user-school>
-      <user-hub v-if="useractiveApp == 'userHub'"></user-hub>
-      <user-posts v-if="useractiveApp == 'userPosts'"></user-posts>
-      <user-profile v-if="useractiveApp == 'userProfile'"></user-profile>
+      <user-class :class="useractiveApp" v-if="useractiveApp == 'userClass'"></user-class>
+      <user-school :class="useractiveApp" v-if="useractiveApp == 'userSchool'"></user-school>
+      <user-hub :class="useractiveApp" v-if="useractiveApp == 'userHub'"></user-hub>
+      <user-posts :class="useractiveApp" v-if="useractiveApp == 'userPosts'"></user-posts>
+      <user-profile :class="useractiveApp" v-if="useractiveApp == 'userProfile'"></user-profile>
     </div>
   </div>
 </template>
@@ -55,6 +55,7 @@ export default {
     switchUserApp: function(op){
       this.$parent.switchUserApp(op);
       this.$parent.closeNav();
+      this.useractiveApp = this.$parent.useractiveApp;
     },
     logout: function(){
       this.$parent.logout();

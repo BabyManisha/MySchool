@@ -100,7 +100,6 @@ export default {
         }
   		},
       switchUserApp: function(op){
-          console.log(op);
           this.useractiveApp = op;
       },
       whoami: function(){
