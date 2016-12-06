@@ -11,25 +11,25 @@
 
   <div class="app">
     <div class="main-container container">
-      <button type="button" class="btn btn-warning" 
+      <button type="button" class="btn btn-warning"
           @click="switchApp('login')">
             <img id="bimg" alt="Brand" src="images/login1.png">
           </button>
-      <button type="button" class="btn btn-warning" 
+      <button type="button" class="btn btn-warning"
            @click="switchApp('aboutus')">
              <img id="bimg" alt="Brand" src="images/aboutus.png">
            </button>
-      <button type="button" class="btn btn-warning" 
+      <button type="button" class="btn btn-warning"
            @click="switchApp('contactus')">
              <img id="bimg" alt="Brand" src="images/contactus.png">
            </button>
-      <button type="button" class="btn btn-warning" 
+      <button type="button" class="btn btn-warning"
            @click="switchApp('testing')">
              <img id="bimg" alt="Brand" src="images/logo.png">
            </button>
-      <!-- <a href="images/parents.png" download 
+      <!-- <a href="images/parents.png" download
                   @click="downloadImage('images/parents.png')">Download Image</a> -->
-      <!-- <a href="images/parents.png"  
+      <!-- <a href="images/parents.png"
                   @click="downloadImage('file://images/parents.png')">Download Image</a> -->
   	</div>
   </div>
@@ -52,6 +52,7 @@
   <aboutus-vue v-if="activeApp == 'aboutus'"></aboutus-vue>
   <contactus-vue v-if="activeApp == 'contactus'"></contactus-vue>
   <testing-vue v-if="activeApp == 'testing'"></testing-vue>
+  <post_vue v-if="activeApp == 'post_vue'"></post_vue>
 </div>
 </template>
 
@@ -63,6 +64,7 @@ var Admin = require('./admin.vue')
 var Aboutus = require('./aboutus.vue')
 var Contactus = require('./contactus.vue')
 var Testing = require('./main.vue')
+var Post = require('./add_post.vue')
 export default {
     data () {
       	return {
@@ -85,7 +87,7 @@ export default {
       downloadImage: function(url){
         console.log(url);
         alert(url);
-        cordova.plugins.photoLibrary.saveImage(url, 'My album', 
+        cordova.plugins.photoLibrary.saveImage(url, 'My album',
           function (resp) {
             console.log("Downloaded successfully", resp);
             alert("Downloaded successfully", resp);
@@ -164,7 +166,8 @@ export default {
     'admin-vue': Admin,
     'aboutus-vue': Aboutus,
     'contactus-vue': Contactus,
-    'testing-vue': Testing
+    'testing-vue': Testing,
+    'post_vue': Post
   	}
 }
 </script>
