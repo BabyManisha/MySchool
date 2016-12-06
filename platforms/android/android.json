@@ -19,14 +19,6 @@
                         {
                             "xml": "<allow-navigation href=\"cdvphotolibrary:*\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.okaybmd.cordova.plugin.datepicker.DatePickerPlugin\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -53,12 +45,6 @@
         },
         "cordova-plugin-photo-library": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-datepicker": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "com.okaybmd.cordova.plugin.datepicker": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
@@ -70,28 +56,10 @@
             "clobbers": [
                 "cordova.plugins.photoLibrary"
             ]
-        },
-        {
-            "id": "cordova-plugin-datepicker.DatePicker",
-            "file": "plugins/cordova-plugin-datepicker/www/android/DatePicker.js",
-            "pluginId": "cordova-plugin-datepicker",
-            "clobbers": [
-                "datePicker"
-            ]
-        },
-        {
-            "id": "com.okaybmd.cordova.plugin.datepicker.DatePicker",
-            "file": "plugins/com.okaybmd.cordova.plugin.datepicker/www/android/DatePicker.js",
-            "pluginId": "com.okaybmd.cordova.plugin.datepicker",
-            "clobbers": [
-                "datePicker"
-            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.3.0",
-        "cordova-plugin-photo-library": "1.2.1",
-        "cordova-plugin-datepicker": "0.9.3",
-        "com.okaybmd.cordova.plugin.datepicker": "1.3.7"
+        "cordova-plugin-photo-library": "1.2.1"
     }
 }
