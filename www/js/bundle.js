@@ -11948,12 +11948,41 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-3b62a282", module.exports)
+    hotAPI.createRecord("_v-e7dc75f8", module.exports)
   } else {
-    hotAPI.update("_v-3b62a282", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-e7dc75f8", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":2}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    switchApp: function switchApp(op) {
+      this.$parent.switchApp(op);
+    }
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a class=\"fa fa-arrow-circle-left fa-2x\" @click=\"switchApp('')\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n<div class=\"app\">\n<div class=\"main-container container\">\n<h1>Hello ! welcome to posts section</h1></div></div>\n<div class=\"container\">\n  <form>\n    <div class=\"form-group\">\n      <label for=\"Name\">Name:</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Enter event name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"Details\">Details:</label>\n      <input type=\"text\" class=\"form-control\" id=\"details\" placeholder=\"Enter details of events...\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"Place\">Place:</label>\n      <input type=\"text\" class=\"form-control\" id=\"place\" placeholder=\"Enter venue...\">\n    </div>\n    <div class=\"form-group\">\n\n      <label for=\"Date\">Date:</label>\n      <input type=\"date\" class=\"form-control\" id=\"date\" placeholder=\"select date\">\n        </div>\n        <div class=\"form-group\">\n\n      <label for=\"Time\">Time:</label>\n      <input type=\"time\" class=\"form-control\" id=\"time\" placeholder=\"select time\">\n        </div>\n        <div class=\"form-group\">\n\n      <label for=\"Image\">Images:</label>\n\n      <input type=\"text\" class=\"form-control\" id=\"time\" placeholder=\"select time\">\n        </div>\n\n\n    <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n  </form>\n</div>\n\n</div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-09b67c35", module.exports)
+  } else {
+    hotAPI.update("_v-09b67c35", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12019,12 +12048,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-398ddc23", module.exports)
+    hotAPI.createRecord("_v-d18880b0", module.exports)
   } else {
-    hotAPI.update("_v-398ddc23", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-d18880b0", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./userClass.vue":15,"./userHub.vue":16,"./userPosts.vue":17,"./userProfile.vue":18,"./userSchool.vue":19,"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+},{"./userClass.vue":16,"./userHub.vue":17,"./userPosts.vue":18,"./userProfile.vue":19,"./userSchool.vue":20,"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12048,12 +12077,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-bfd413dc", module.exports)
+    hotAPI.createRecord("_v-3526e1d2", module.exports)
   } else {
-    hotAPI.update("_v-bfd413dc", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-3526e1d2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12068,6 +12097,7 @@ var Admin = require('./admin.vue');
 var Aboutus = require('./aboutus.vue');
 var Contactus = require('./contactus.vue');
 var Testing = require('./main.vue');
+var Post = require('./add_post.vue');
 exports.default = {
   data: function data() {
     return {
@@ -12167,22 +12197,23 @@ exports.default = {
     'admin-vue': Admin,
     'aboutus-vue': Aboutus,
     'contactus-vue': Contactus,
-    'testing-vue': Testing
+    'testing-vue': Testing,
+    'post_vue': Post
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      <!-- <a href=\"images/parents.png\" download \n                  @click=\"downloadImage('images/parents.png')\">Download Image</a> -->\n      <!-- <a href=\"images/parents.png\"  \n                  @click=\"downloadImage('file://images/parents.png')\">Download Image</a> -->\n  \t</div>\n  </div>\n\n   <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div id=\"homeapp\" v-if=\"activeApp == ''\">\n  <nav id=\"nav-id\" class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <a id=\"nobars\" class=\"fa fa-bars fa-2x\"></a>\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">Glim</a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"app\">\n    <div class=\"main-container container\">\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('login')\">\n            <img id=\"bimg\" alt=\"Brand\" src=\"images/login1.png\">\n          </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('aboutus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/aboutus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('contactus')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/contactus.png\">\n           </button>\n      <button type=\"button\" class=\"btn btn-warning\" @click=\"switchApp('testing')\">\n             <img id=\"bimg\" alt=\"Brand\" src=\"images/logo.png\">\n           </button>\n      <!-- <a href=\"images/parents.png\" download\n                  @click=\"downloadImage('images/parents.png')\">Download Image</a> -->\n      <!-- <a href=\"images/parents.png\"\n                  @click=\"downloadImage('file://images/parents.png')\">Download Image</a> -->\n  \t</div>\n  </div>\n\n   <!-- <nav id=\"nav-id1\" class=\"navbar navbar-inverse\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n          <a class=\"navbar-brand\" href=\"#\">All Rights 2016 @S4-Team</a>\n      </div>\n    </div>\n  </nav> -->\n\n</div>\n\n<div v-if=\"activeApp != ''\">\n  <login-vue v-if=\"activeApp == 'login'\"></login-vue>\n  <parents-vue v-if=\"activeApp == 'parents'\"></parents-vue>\n  <teachers-vue v-if=\"activeApp == 'teachers'\"></teachers-vue>\n  <admin-vue v-if=\"activeApp == 'admin'\"></admin-vue>\n  <aboutus-vue v-if=\"activeApp == 'aboutus'\"></aboutus-vue>\n  <contactus-vue v-if=\"activeApp == 'contactus'\"></contactus-vue>\n  <testing-vue v-if=\"activeApp == 'testing'\"></testing-vue>\n  <post_vue v-if=\"activeApp == 'post_vue'\"></post_vue>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-577dda8a", module.exports)
+    hotAPI.createRecord("_v-d593aad4", module.exports)
   } else {
-    hotAPI.update("_v-577dda8a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-d593aad4", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./aboutus.vue":5,"./admin.vue":6,"./contactus.vue":7,"./login.vue":9,"./main.vue":11,"./parents.vue":12,"./random-word.vue":13,"vue":4,"vue-hot-reload-api":2}],9:[function(require,module,exports){
+},{"./aboutus.vue":5,"./add_post.vue":6,"./admin.vue":7,"./contactus.vue":8,"./login.vue":10,"./main.vue":12,"./parents.vue":13,"./random-word.vue":14,"vue":4,"vue-hot-reload-api":2}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12249,12 +12280,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-5c73a986", module.exports)
+    hotAPI.createRecord("_v-2f740ec2", module.exports)
   } else {
-    hotAPI.update("_v-5c73a986", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-2f740ec2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],10:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],11:[function(require,module,exports){
 var Vue = require('vue')
 var VueResource = require('vue-resource');
 var HomeVue = require('./home.vue')
@@ -12287,7 +12318,7 @@ var vm = new Vue({
     'home-vue': HomeVue
   }
 });
-},{"./home.vue":8,"vue":4,"vue-resource":3}],11:[function(require,module,exports){
+},{"./home.vue":9,"vue":4,"vue-resource":3}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12319,12 +12350,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-1e89b2d6", module.exports)
+    hotAPI.createRecord("_v-9c9f8320", module.exports)
   } else {
-    hotAPI.update("_v-1e89b2d6", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-9c9f8320", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./random-word.vue":13,"./sm.vue":14,"vue":4,"vue-hot-reload-api":2}],12:[function(require,module,exports){
+},{"./random-word.vue":14,"./sm.vue":15,"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12390,12 +12421,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-b1e80c46", module.exports)
+    hotAPI.createRecord("_v-50cf1022", module.exports)
   } else {
-    hotAPI.update("_v-b1e80c46", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-50cf1022", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./userClass.vue":15,"./userHub.vue":16,"./userPosts.vue":17,"./userProfile.vue":18,"./userSchool.vue":19,"vue":4,"vue-hot-reload-api":2}],13:[function(require,module,exports){
+},{"./userClass.vue":16,"./userHub.vue":17,"./userPosts.vue":18,"./userProfile.vue":19,"./userSchool.vue":20,"vue":4,"vue-hot-reload-api":2}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12428,12 +12459,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-608b5728", module.exports)
+    hotAPI.createRecord("_v-aac07a26", module.exports)
   } else {
-    hotAPI.update("_v-608b5728", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-aac07a26", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],14:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12466,12 +12497,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-c5f25094", module.exports)
+    hotAPI.createRecord("_v-40862a51", module.exports)
   } else {
-    hotAPI.update("_v-c5f25094", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-40862a51", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],15:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12525,18 +12556,18 @@ exports.default = {
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <div class=\"main-container container\">\n      <!-- Welcome {{userDetails.name}} !! -->\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4\" v-for=\"ev in classEvents\">\n          <div class=\"thumbnail\">\n            <img v-bind:src=\"'classEvents/'+ev.images[0]\" alt=\"...\">\n            <div class=\"caption\">\n              <h3>{{ev.name}}</h3>\n              <p><b> Description </b>{{ev.details}}</p>\n              <p><b> Venue </b>{{ev.place}}</p>\n              <p><b> Date and Time </b>{{ev.date}}</p>\n\n              <h3>\n                <div class=\"embed-responsive embed-responsive-4by3\">\n                  <iframe width=\"500\" height=\"360\" v-bind:src=\"'https://www.youtube.com/embed/'+ev.videos[0]+'?feature=player_embedded'\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n                </div>\n              </h3>\n              <h3> Gallery </h3>\n              <div class=\"row\">\n                <div class=\"col-xs-6 col-md-3\" v-for=\"im in ev.images\">\n                  <a href=\"#\" class=\"thumbnail\">\n                    <img v-bind:src=\"'classEvents/'+im\" alt=\"...\">\n                  </a>\n                </div>\n              </div>\n\n              <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Details</a></p>\n            </div>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n    <div class=\"app\">\n      <div class=\"main-container container\">\n          <!-- Welcome {{userDetails.name}} !! -->\n            <div class=\"row\">\n              <div class=\"col-sm-6 col-md-4\" v-for=\"ev in classEvents\">\n                <div class=\"thumbnail\">\n                  <img v-bind:src=\"'classEvents/'+ev.images[0]\" alt=\"...\">\n                    <div class=\"caption\">\n                        <h3>{{ev.name}}</h3>\n                        <p><b> Description </b>{{ev.details}}</p>\n                        <p><b> Venue </b>{{ev.place}}</p>\n                        <p><b> Date and Time </b>{{ev.date}}</p>\n                        <h3>\n                          <div class=\"embed-responsive embed-responsive-4by3\">\n                          <iframe width=\"500\" height=\"360\" v-bind:src=\"'https://www.youtube.com/embed/'+ev.videos[0]+'?feature=player_embedded'\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n                          </div>\n                        </h3>\n                        <h3> Gallery </h3>\n                        <div class=\"row\">\n                        <div class=\"col-xs-6 col-md-3\" v-for=\"im in ev.images\">\n                        <a href=\"#\" class=\"thumbnail\">\n                        <img v-bind:src=\"'classEvents/'+im\" alt=\"...\">\n                      </a>\n                    </div>\n                  </div>\n\n                  <p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Details</a></p>\n                </div>\n              </div>\n            </div>\n          </div>\n          <a href=\"#head\"><div style=\"position: fixed; bottom: 0px; right: 0px; \">\n          <style>.glyphicon.glyphicon-plus{\n    font-size: 50px;\n    color:#ff6b35;\n}</style>\n          <span class=\"glyphicon glyphicon-plus\" @click=\"switchApp('post_vue')\"></span></div></a>\n      </div>\n    </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-94495f7e", module.exports)
+    hotAPI.createRecord("_v-099c2d74", module.exports)
   } else {
-    hotAPI.update("_v-94495f7e", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-099c2d74", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],16:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12578,12 +12609,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-bb88e504", module.exports)
+    hotAPI.createRecord("_v-4bfea3c3", module.exports)
   } else {
-    hotAPI.update("_v-bb88e504", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-4bfea3c3", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],17:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],18:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12625,12 +12656,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-2edd7d1c", module.exports)
+    hotAPI.createRecord("_v-74341621", module.exports)
   } else {
-    hotAPI.update("_v-2edd7d1c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-74341621", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],18:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12650,12 +12681,12 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-22ab67b2", module.exports)
+    hotAPI.createRecord("_v-6cbfd377", module.exports)
   } else {
-    hotAPI.update("_v-22ab67b2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-6cbfd377", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],19:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":2}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12715,9 +12746,9 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-13c2c9fb", module.exports)
+    hotAPI.createRecord("_v-793f5196", module.exports)
   } else {
-    hotAPI.update("_v-13c2c9fb", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-793f5196", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}]},{},[10]);
+},{"vue":4,"vue-hot-reload-api":2}]},{},[11]);

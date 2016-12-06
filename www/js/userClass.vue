@@ -2,26 +2,25 @@
     <div class="app">
       <div class="main-container container">
           <!-- Welcome {{userDetails.name}} !! -->
-          <div class="row">
-            <div class="col-sm-6 col-md-4" v-for="ev in classEvents">
-              <div class="thumbnail">
-                <img v-bind:src="'classEvents/'+ev.images[0]" alt="...">
-                <div class="caption">
-                  <h3>{{ev.name}}</h3>
-                  <p><b> Description </b>{{ev.details}}</p>
-                  <p><b> Venue </b>{{ev.place}}</p>
-                  <p><b> Date and Time </b>{{ev.date}}</p>
-
-                  <h3>
-                    <div class="embed-responsive embed-responsive-4by3">
-                      <iframe width="500" height="360" 
+            <div class="row">
+              <div class="col-sm-6 col-md-4" v-for="ev in classEvents">
+                <div class="thumbnail">
+                  <img v-bind:src="'classEvents/'+ev.images[0]" alt="...">
+                    <div class="caption">
+                        <h3>{{ev.name}}</h3>
+                        <p><b> Description </b>{{ev.details}}</p>
+                        <p><b> Venue </b>{{ev.place}}</p>
+                        <p><b> Date and Time </b>{{ev.date}}</p>
+                        <h3>
+                          <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="500" height="360"
                       v-bind:src="'https://www.youtube.com/embed/'+ev.videos[0]+'?feature=player_embedded'" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                  </h3>
-                  <h3> Gallery </h3>
-                  <div class="row">
-                    <div class="col-xs-6 col-md-3" v-for="im in ev.images">
-                      <a href="#" class="thumbnail">
+                          </div>
+                        </h3>
+                        <h3> Gallery </h3>
+                        <div class="row">
+                        <div class="col-xs-6 col-md-3" v-for="im in ev.images">
+                        <a href="#" class="thumbnail">
                         <img v-bind:src="'classEvents/'+im" alt="...">
                       </a>
                     </div>
@@ -32,6 +31,12 @@
               </div>
             </div>
           </div>
+          <a href="#head"><div style="position: fixed; bottom: 0px; right: 0px; ">
+          <style>.glyphicon.glyphicon-plus{
+    font-size: 50px;
+    color:#ff6b35;
+}</style>
+          <span class="glyphicon glyphicon-plus" @click="switchApp('post_vue')"></span></div></a>
       </div>
     </div>
 </template>
