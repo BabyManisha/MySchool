@@ -49,6 +49,15 @@ export default {
       userDetails: this.$parent.userDetails
     }
   },
+  created: function(){
+    var self = this, tmUser = localStorage.getItem("user");
+    if(localStorage != undefined && tmUser != "undefined" && tmUser != null){
+      self.user = tmUser;
+      alert(self.user);
+      self.whoami();
+      return;
+    }
+  },
   methods: {
     switchApp: function(op){
       this.$parent.switchApp(op);

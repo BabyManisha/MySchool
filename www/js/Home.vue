@@ -120,6 +120,29 @@ export default {
             console.log(self.role);
             self.userDetails = response.data;
             console.log(self.userDetails);
+
+            if(localStorage != undefined)
+            {
+              console.log("Local Storage is supported");
+              //add
+              localStorage.setItem("user", self.user);
+
+              //update or overwrite
+              // localStorage.setItem("Website", "SitePoint.com");
+
+              //remove
+              // localStorage.removeItem("Website");
+
+              //remove all
+              // localStorage.clear();
+            }
+            else
+            {
+              console.log("No support");
+              alert("localStorage Not Available!!");
+            }
+
+
             self.switchApp(self.role, 'userClass');
         }, function(error) {
             console.log(error);
@@ -128,6 +151,7 @@ export default {
       },
       logout: function(){
         var self = this;
+        localStorage.removeItem("user");
         self.$http.get(self.urlbase+'/logout',{})
         .then(function(response) {
             console.log(response);
