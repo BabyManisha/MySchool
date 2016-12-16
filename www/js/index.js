@@ -28,6 +28,10 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        console.log(FileTransfer);
+        alert("Heelo SM");
+        console.log(cordova.file);
+        alert(cordova.file);
     },
 
     // Update DOM on a Received Event
@@ -42,5 +46,16 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+// var myElement = document.getElementById('myElement');
+
+// // create a simple instance
+// // by default, it only adds horizontal recognizers
+// var mc = new Hammer(myElement);
+
+// // listen to events...
+// mc.on("panleft panright tap press", function(ev) {
+//     myElement.textContent = ev.type +" gesture detected.";
+// });
 
 app.initialize();

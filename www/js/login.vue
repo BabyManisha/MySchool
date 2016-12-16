@@ -79,7 +79,7 @@ export default {
         self.$http.post(self.urlbase+'/login', 
           { 'username': self.username, 
             'password': self.password,
-            'schoolid': 'goldenoaks01'})
+            'school_id': 'admin'})
         .then(function(response) {
             console.log(response);
             if(response.data.success || response.data.loggedin){

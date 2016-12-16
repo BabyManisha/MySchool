@@ -40,6 +40,7 @@ export default {
                   'userProfile' : 'Profile'},
       activeApp: this.$parent.activeApp,
       useractiveApp: this.$parent.useractiveApp,
+      eventDetails: '',
       urlbase: this.$parent.urlbase,
       user: this.$parent.user,
       role: this.$parent.role,
@@ -53,6 +54,7 @@ export default {
       this.$parent.switchApp(op);
     },
     switchUserApp: function(op){
+      this.eventDetails = '';
       this.$parent.switchUserApp(op);
       this.$parent.closeNav();
       this.useractiveApp = this.$parent.useractiveApp;
@@ -72,7 +74,7 @@ export default {
     'user-school': userSchool,
     'user-hub': userHub,
     'user-posts': userPosts,
-    'user-profile': userProfile,
+    'user-profile': userProfile
   }
 }
 </script>

@@ -49,6 +49,15 @@ export default {
       userDetails: this.$parent.userDetails
     }
   },
+  created: function(){
+    var self = this, tmUser = localStorage.getItem("user");
+    if(localStorage != undefined && tmUser != "undefined" && tmUser != null){
+      self.user = tmUser;
+      alert(self.user);
+      self.whoami();
+      return;
+    }
+  },
   methods: {
     switchApp: function(op){
       this.$parent.switchApp(op);
@@ -70,7 +79,7 @@ export default {
         self.$http.post(self.urlbase+'/login', 
           { 'username': self.username, 
             'password': self.password,
-            'schoolid': 'goldenoaks01'})
+            'school_id': 'admin'})
         .then(function(response) {
             console.log(response);
             if(response.data.success || response.data.loggedin){

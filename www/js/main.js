@@ -1,6 +1,6 @@
 var Vue = require('vue')
 var VueResource = require('vue-resource');
-var HomeVue = require('./home.vue')
+var HomeVue = require('./Home.vue')
 
 
 Vue.use(VueResource);

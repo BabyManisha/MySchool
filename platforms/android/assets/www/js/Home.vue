@@ -27,10 +27,6 @@
            @click="switchApp('testing')">
              <img id="bimg" alt="Brand" src="images/logo.png">
            </button>
-      <!-- <a href="images/parents.png" download 
-                  @click="downloadImage('images/parents.png')">Download Image</a> -->
-      <!-- <a href="images/parents.png"  
-                  @click="downloadImage('file://images/parents.png')">Download Image</a> -->
   	</div>
   </div>
 
@@ -58,7 +54,7 @@
 <script>
 var Login = require('./login.vue')
 var Parents = require('./parents.vue')
-var Teachers = require('./random-word.vue')
+var Teachers = require('./teachers.vue')
 var Admin = require('./admin.vue')
 var Aboutus = require('./aboutus.vue')
 var Contactus = require('./contactus.vue')
@@ -82,18 +78,6 @@ export default {
     	}
   	},
     methods: {
-      downloadImage: function(url){
-        console.log(url);
-        alert(url);
-        cordova.plugins.photoLibrary.saveImage(url, 'My album', 
-          function (resp) {
-            console.log("Downloaded successfully", resp);
-            alert("Downloaded successfully", resp);
-          }, function (err) {
-            console.log("Downloaded successfully", resp);
-            alert("error occured", err);
-          });
-      },
   		switchApp: function(op, userop){
   			this.activeApp = op;
         if(userop){
@@ -120,6 +104,29 @@ export default {
             console.log(self.role);
             self.userDetails = response.data;
             console.log(self.userDetails);
+
+            if(localStorage != undefined)
+            {
+              console.log("Local Storage is supported");
+              //add
+              localStorage.setItem("user", self.user);
+
+              //update or overwrite
+              // localStorage.setItem("Website", "SitePoint.com");
+
+              //remove
+              // localStorage.removeItem("Website");
+
+              //remove all
+              // localStorage.clear();
+            }
+            else
+            {
+              console.log("No support");
+              alert("localStorage Not Available!!");
+            }
+
+
             self.switchApp(self.role, 'userClass');
         }, function(error) {
             console.log(error);
@@ -128,6 +135,7 @@ export default {
       },
       logout: function(){
         var self = this;
+        localStorage.removeItem("user");
         self.$http.get(self.urlbase+'/logout',{})
         .then(function(response) {
             console.log(response);

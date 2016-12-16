@@ -9,6 +9,17 @@
         <param name="onload" value="true" />
     </feature>
     <allow-navigation href="cdvphotolibrary:*" />
+    <feature name="SecureStorage">
+        <param name="android-package" value="com.crypho.plugins.SecureStorage" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
     <name>My School</name>
     <description>
         It is School App.
